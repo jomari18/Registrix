@@ -1,0 +1,1 @@
+export function App(){return <main><h1>Registrix</h1><p>Student records, thoughtfully organized.</p><p>{import.meta.env.VITE_SUPABASE_URL?'Workspace setup is in progress.':'Add your dedicated Supabase configuration to begin.'}</p></main>;}

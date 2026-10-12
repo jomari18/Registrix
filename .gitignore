@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env*
+!.env.example
+.superpowers/
+.local-*
+outputs/
+*.zip
+designs/
+exploration/
+preview/
+qa.cjs
+.playwright-cli/
+*.log
