@@ -1,13 +1,154 @@
-import {useState} from 'react';
-import {Link} from 'react-router-dom';
-import {PageHeader} from '../../components/PageHeader';
-import {ButtonLink} from '../../components/Button';
-import {Field} from '../../components/Field';
-import {Icon} from '../../components/Icon';
-import {QueryState,EmptyState} from '../../components/QueryState';
-import {Pagination} from '../../components/Pagination';
-import {useQuery} from '../../hooks/useQuery';
-import {useAuth} from '../auth/AuthProvider';
-import {studentsApi} from './api';
-import {studentName} from '../../domain/records';
-export function StudentList(){const [search,setSearch]=useState(''),[archived,setArchived]=useState(false),[page,setPage]=useState(1),manage=useAuth().access?.role!=='teacher';const request={search,archived,page},q=useQuery(['students',request],()=>studentsApi.list(request));return <><PageHeader eyebrow="Student workspace" title="Every student, in focus." description="Find a record, review their classes and keep information connected.">{manage&&<ButtonLink to="/students/new"><Icon name="plus"/>Add student</ButtonLink>}</PageHeader><section className="card"><div className="tabs" role="group" aria-label="Student visibility"><button className={!archived?'active':''} onClick={()=>{setArchived(false);setPage(1);}}>Active students</button>{manage&&<button className={archived?'active':''} onClick={()=>{setArchived(true);setPage(1);}}>Archived students</button>}</div><div className="filters"><Field label="Search students" className="control" type="search" placeholder="Student number or name" value={search} onChange={e=>{setSearch(e.target.value);setPage(1);}}/></div><QueryState query={q}/>{q.data&&(q.data.items.length?<><div className="table-wrap desktop-records"><table><thead><tr><th>Student</th><th>Student number</th><th>Gender</th><th>Status</th><th>Action</th></tr></thead><tbody>{q.data.items.map(s=><tr key={s.id}><td><div className="person"><span className="avatar">{s.first_name[0]}{s.surname[0]}</span><div><strong>{studentName(s)}</strong></div></div></td><td>{s.student_no}</td><td>{s.gender}</td><td><span className={`badge ${s.archived?'warning':'success'}`}>{s.archived?'Archived':'Active'}</span></td><td><Link to={'/students/'+s.id}>View student →</Link></td></tr>)}</tbody></table></div><div className="mobile-records">{q.data.items.map(s=><article className="mobile-item" key={s.id}><div className="person"><span className="avatar">{s.first_name[0]}{s.surname[0]}</span><div><h3>{studentName(s)}</h3><small className="muted">{s.student_no} · {s.gender}</small></div></div><Link to={'/students/'+s.id}>View student →</Link></article>)}</div></>:<EmptyState title={search?'No matching students.':'A fresh student workspace.'} description={search?'Try another name or student number.':'Create a student record to start organizing enrollments.'}/>) }{q.data&&<Pagination page={page} total={q.data.total} onChange={setPage}/>}</section></>;}
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { PageHeader } from "../../components/PageHeader";
+import { ButtonLink } from "../../components/Button";
+import { Field } from "../../components/Field";
+import { Icon } from "../../components/Icon";
+import { QueryState, EmptyState } from "../../components/QueryState";
+import { Pagination } from "../../components/Pagination";
+import { useQuery } from "../../hooks/useQuery";
+import { useAuth } from "../auth/AuthProvider";
+import { studentsApi } from "./api";
+import { studentName } from "../../domain/records";
+export function StudentList() {
+  const [search, setSearch] = useState(""),
+    [archived, setArchived] = useState(false),
+    [page, setPage] = useState(1),
+    manage = useAuth().access?.role !== "teacher";
+  const request = { search, archived, page },
+    q = useQuery(["students", request], () => studentsApi.list(request));
+  return (
+    <>
+      <PageHeader
+        eyebrow="Student workspace"
+        title="Every student, in focus."
+        description="Find a record, review their classes and keep information connected."
+      >
+        {manage && (
+          <ButtonLink to="/students/new">
+            <Icon name="plus" />
+            Add student
+          </ButtonLink>
+        )}
+      </PageHeader>
+      <section className="card">
+        <div className="tabs" role="group" aria-label="Student visibility">
+          <button
+            className={!archived ? "active" : ""}
+            onClick={() => {
+              setArchived(false);
+              setPage(1);
+            }}
+          >
+            Active students
+          </button>
+          {manage && (
+            <button
+              className={archived ? "active" : ""}
+              onClick={() => {
+                setArchived(true);
+                setPage(1);
+              }}
+            >
+              Archived students
+            </button>
+          )}
+        </div>
+        <div className="filters">
+          <Field
+            label="Search students"
+            className="control"
+            type="search"
+            placeholder="Student number or name"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setPage(1);
+            }}
+          />
+        </div>
+        <QueryState query={q} />
+        {q.data &&
+          (q.data.items.length ? (
+            <>
+              <div className="table-wrap desktop-records">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Student</th>
+                      <th>Student number</th>
+                      <th>Gender</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {q.data.items.map((s) => (
+                      <tr key={s.id}>
+                        <td>
+                          <div className="person">
+                            <span className="avatar">
+                              {s.first_name[0]}
+                              {s.surname[0]}
+                            </span>
+                            <div>
+                              <strong>{studentName(s)}</strong>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{s.student_no}</td>
+                        <td>{s.gender}</td>
+                        <td>
+                          <span
+                            className={`badge ${s.archived ? "warning" : "success"}`}
+                          >
+                            {s.archived ? "Archived" : "Active"}
+                          </span>
+                        </td>
+                        <td>
+                          <Link to={"/students/" + s.id}>View student →</Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="mobile-records">
+                {q.data.items.map((s) => (
+                  <article className="mobile-item" key={s.id}>
+                    <div className="person">
+                      <span className="avatar">
+                        {s.first_name[0]}
+                        {s.surname[0]}
+                      </span>
+                      <div>
+                        <h3>{studentName(s)}</h3>
+                        <small className="muted">
+                          {s.student_no} · {s.gender}
+                        </small>
+                      </div>
+                    </div>
+                    <Link to={"/students/" + s.id}>View student →</Link>
+                  </article>
+                ))}
+              </div>
+            </>
+          ) : (
+            <EmptyState
+              title={
+                search ? "No matching students." : "A fresh student workspace."
+              }
+              description={
+                search
+                  ? "Try another name or student number."
+                  : "Create a student record to start organizing enrollments."
+              }
+            />
+          ))}
+        {q.data && (
+          <Pagination page={page} total={q.data.total} onChange={setPage} />
+        )}
+      </section>
+    </>
+  );
+}

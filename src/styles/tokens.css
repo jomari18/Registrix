@@ -1,1 +1,23 @@
-:root{--bg:#f7f4ef;--surface:#fff;--surface-subtle:#f1ece5;--ink:#292334;--muted:#6b6075;--primary:#7043a0;--primary-hover:#58327f;--primary-soft:#efe7f8;--line:#e1d9e5;--success:#236247;--success-soft:#e8f3eb;--warning:#825518;--warning-soft:#fff2d9;--danger:#a43145;--danger-soft:#fbeaf0;--info:#305d85;--info-soft:#eaf2fa;--shadow:0 4px 22px #34224006;--radius:18px;--font-body:'Segoe UI',Arial,sans-serif;--font-display:Georgia,'Times New Roman',serif}
+:root {
+  --bg: #f7f4ef;
+  --surface: #fff;
+  --surface-subtle: #f1ece5;
+  --ink: #292334;
+  --muted: #6b6075;
+  --primary: #7043a0;
+  --primary-hover: #58327f;
+  --primary-soft: #efe7f8;
+  --line: #e1d9e5;
+  --success: #236247;
+  --success-soft: #e8f3eb;
+  --warning: #825518;
+  --warning-soft: #fff2d9;
+  --danger: #a43145;
+  --danger-soft: #fbeaf0;
+  --info: #305d85;
+  --info-soft: #eaf2fa;
+  --shadow: 0 4px 22px #34224006;
+  --radius: 18px;
+  --font-body: "Segoe UI", Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+}

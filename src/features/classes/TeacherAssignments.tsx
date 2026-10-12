@@ -1,14 +1,133 @@
-import {useEffect,useState} from 'react';
-import {rpc} from '../../lib/api';
-import {useQuery} from '../../hooks/useQuery';
-import {useMutation} from '../../hooks/useMutation';
-import type {PageResult} from '../../domain/contracts';
-import type {AcademicClass,Staff} from '../../domain/records';
-import {Field} from '../../components/Field';
-import {SelectField} from '../../components/SelectField';
-import {Button} from '../../components/Button';
-import {MutationNotice} from '../../components/MutationNotice';
-import {QueryState} from '../../components/QueryState';
-import {ConfirmationDialog} from '../../components/ConfirmationDialog';
-import {Pagination} from '../../components/Pagination';
-export function TeacherAssignments({record,onSaved}:{record:AcademicClass;onSaved:()=>void}){const [search,setSearch]=useState(''),[page,setPage]=useState(1),[selected,setSelected]=useState(''),[confirm,setConfirm]=useState<{user_id:string;active:boolean;version:number|null}|null>(null),q=useQuery(['teacher-select',search,page],()=>rpc<PageResult<Staff>>('list_staff',{state:'active',search,page})),mutation=useMutation('set_teacher_assignment',record.id);useEffect(()=>{if(mutation.state.phase==='saved'){setSelected('');onSaved();}},[mutation.state.data]);return <><h2>Teacher assignments</h2><p className="muted small" style={{margin:'8px 0 20px'}}>Only active teachers assigned here can view this roster and enter grades.</p>{record.assignments?.filter(a=>a.active).map(a=><div className="mobile-item" key={a.user_id}><strong>{a.profile.display_name}</strong><Button variant="secondary small" disabled={mutation.locked} onClick={()=>setConfirm({user_id:a.user_id,active:false,version:a.version})}>Remove assignment</Button></div>)}<div className="form-grid"><Field label="Search staff to assign" type="search" value={search} onChange={e=>{setSearch(e.target.value);setPage(1);}}/><SelectField label="Teacher" value={selected} onChange={e=>setSelected(e.target.value)}><option value="">Choose an approved teacher</option>{q.data?.items.filter(s=>s.role==='teacher').map(s=><option key={s.id} value={s.id}>{s.display_name} · {s.username}</option>)}</SelectField></div><QueryState query={q}/>{q.data&&q.data.total>20&&<Pagination page={page} total={q.data.total} onChange={setPage}/>}<MutationNotice mutation={mutation}/><div className="actions" style={{marginTop:20}}><Button disabled={!selected||mutation.locked} onClick={()=>setConfirm({user_id:selected,active:true,version:record.assignments?.find(a=>a.user_id===selected)?.version??null})}>Assign teacher</Button></div><ConfirmationDialog open={!!confirm} title={confirm?.active?'Assign teacher?':'Remove teacher access?'} message="Class access changes on the teacher’s next request. Review the selected teacher before confirming." confirmLabel="Update assignment" onCancel={()=>setConfirm(null)} onConfirm={()=>{if(confirm)void mutation.submit({user_id:confirm.user_id,class_id:record.id,active:confirm.active},confirm.version);setConfirm(null);}}/></>;}
+import { useEffect, useState } from "react";
+import { rpc } from "../../lib/api";
+import { useQuery } from "../../hooks/useQuery";
+import { useMutation } from "../../hooks/useMutation";
+import type { PageResult } from "../../domain/contracts";
+import type { AcademicClass, Staff } from "../../domain/records";
+import { Field } from "../../components/Field";
+import { SelectField } from "../../components/SelectField";
+import { Button } from "../../components/Button";
+import { MutationNotice } from "../../components/MutationNotice";
+import { QueryState } from "../../components/QueryState";
+import { ConfirmationDialog } from "../../components/ConfirmationDialog";
+import { Pagination } from "../../components/Pagination";
+export function TeacherAssignments({
+  record,
+  onSaved,
+}: {
+  record: AcademicClass;
+  onSaved: () => void;
+}) {
+  const [search, setSearch] = useState(""),
+    [page, setPage] = useState(1),
+    [selected, setSelected] = useState(""),
+    [confirm, setConfirm] = useState<{
+      user_id: string;
+      active: boolean;
+      version: number | null;
+    } | null>(null),
+    q = useQuery(["teacher-select", search, page], () =>
+      rpc<PageResult<Staff>>("list_staff", { state: "active", search, page }),
+    ),
+    mutation = useMutation("set_teacher_assignment", record.id);
+  useEffect(() => {
+    if (mutation.state.phase === "saved") {
+      setSelected("");
+      onSaved();
+    }
+  }, [mutation.state.data]);
+  return (
+    <>
+      <h2>Teacher assignments</h2>
+      <p className="muted small" style={{ margin: "8px 0 20px" }}>
+        Only active teachers assigned here can view this roster and enter
+        grades.
+      </p>
+      {record.assignments
+        ?.filter((a) => a.active)
+        .map((a) => (
+          <div className="mobile-item" key={a.user_id}>
+            <strong>{a.profile.display_name}</strong>
+            <Button
+              variant="secondary small"
+              disabled={mutation.locked}
+              onClick={() =>
+                setConfirm({
+                  user_id: a.user_id,
+                  active: false,
+                  version: a.version,
+                })
+              }
+            >
+              Remove assignment
+            </Button>
+          </div>
+        ))}
+      <div className="form-grid">
+        <Field
+          label="Search staff to assign"
+          type="search"
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setPage(1);
+          }}
+        />
+        <SelectField
+          label="Teacher"
+          value={selected}
+          onChange={(e) => setSelected(e.target.value)}
+        >
+          <option value="">Choose an approved teacher</option>
+          {q.data?.items
+            .filter((s) => s.role === "teacher")
+            .map((s) => (
+              <option key={s.id} value={s.id}>
+                {s.display_name} · {s.username}
+              </option>
+            ))}
+        </SelectField>
+      </div>
+      <QueryState query={q} />
+      {q.data && q.data.total > 20 && (
+        <Pagination page={page} total={q.data.total} onChange={setPage} />
+      )}
+      <MutationNotice mutation={mutation} />
+      <div className="actions" style={{ marginTop: 20 }}>
+        <Button
+          disabled={!selected || mutation.locked}
+          onClick={() =>
+            setConfirm({
+              user_id: selected,
+              active: true,
+              version:
+                record.assignments?.find((a) => a.user_id === selected)
+                  ?.version ?? null,
+            })
+          }
+        >
+          Assign teacher
+        </Button>
+      </div>
+      <ConfirmationDialog
+        open={!!confirm}
+        title={confirm?.active ? "Assign teacher?" : "Remove teacher access?"}
+        message="Class access changes on the teacher’s next request. Review the selected teacher before confirming."
+        confirmLabel="Update assignment"
+        onCancel={() => setConfirm(null)}
+        onConfirm={() => {
+          if (confirm)
+            void mutation.submit(
+              {
+                user_id: confirm.user_id,
+                class_id: record.id,
+                active: confirm.active,
+              },
+              confirm.version,
+            );
+          setConfirm(null);
+        }}
+      />
+    </>
+  );
+}

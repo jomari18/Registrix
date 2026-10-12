@@ -7,3 +7,5 @@ create table auth.users(id uuid primary key,email text,email_confirmed_at timest
 create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;
 grant usage on schema auth to authenticated,anon;
 grant execute on function auth.uid() to authenticated,anon;
+-- Characterize the provider-created public trigger helper's default grants.
+create function public.rls_auto_enable() returns void language plpgsql security definer as $$begin null;end$$;

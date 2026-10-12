@@ -1,9 +1,127 @@
-import {useState} from 'react';
-import {Link,useNavigate} from 'react-router-dom';
-import {client} from '../../lib/client';
-import {Field,PasswordField} from '../../components/Field';
-import {Button} from '../../components/Button';
-import {StatusNotice} from '../../components/StatusNotice';
-import {AuthLayout} from './AuthLayout';
-import {validateRegistration} from './policy';
-export function RegisterPage(){const [v,setV]=useState({name:'',username:'',position:'',email:'',password:'',confirm:''}),[error,setError]=useState(''),[busy,setBusy]=useState(false);const navigate=useNavigate();const update=(key:keyof typeof v)=>(e:React.ChangeEvent<HTMLInputElement>)=>setV({...v,[key]:e.target.value});return <AuthLayout title="A clearer start." description="Create your staff account. Verification comes first."><form onSubmit={async e=>{e.preventDefault();const invalid=validateRegistration(v);if(invalid){setError(invalid);return;}if(!client)return;setBusy(true);setError('');try{const {error}=await client.auth.signUp({email:v.email.trim(),password:v.password,options:{emailRedirectTo:location.origin+'/verify',data:{display_name:v.name.trim(),username:v.username.trim().toLowerCase(),position:v.position.trim()}}});if(error)setError('Registration could not be completed. Check the fields, use a unique username, and try again.');else navigate('/verify?email='+encodeURIComponent(v.email.trim()));}catch{setError('Could not connect. Reconnect and try again.');}finally{setBusy(false);}}}><Field label="Full name" required maxLength={120} autoComplete="name" value={v.name} onChange={update('name')}/><div className="form-grid"><Field label="Username" required maxLength={32} autoComplete="username" value={v.username} onChange={update('username')}/><Field label="Position (optional)" maxLength={80} value={v.position} onChange={update('position')}/></div><Field label="Email address" required type="email" autoComplete="email" value={v.email} onChange={update('email')}/><PasswordField required minLength={8} maxLength={128} autoComplete="new-password" value={v.password} onChange={update('password')}/><PasswordField label="Confirm password" required autoComplete="new-password" value={v.confirm} onChange={update('confirm')}/>{error&&<StatusNotice type="error">{error}</StatusNotice>}<Button type="submit" disabled={busy}>{busy?'Creating account…':'Create account →'}</Button><small className="muted">Position describes your work. Access permissions are granted by an administrator.</small></form><div className="auth-note">Already registered? <Link to="/auth">Sign in</Link></div></AuthLayout>;}
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { client } from "../../lib/client";
+import { Field, PasswordField } from "../../components/Field";
+import { Button } from "../../components/Button";
+import { StatusNotice } from "../../components/StatusNotice";
+import { AuthLayout } from "./AuthLayout";
+import { validateRegistration } from "./policy";
+export function RegisterPage() {
+  const [v, setV] = useState({
+      name: "",
+      username: "",
+      position: "",
+      email: "",
+      password: "",
+      confirm: "",
+    }),
+    [error, setError] = useState(""),
+    [busy, setBusy] = useState(false);
+  const navigate = useNavigate();
+  const update =
+    (key: keyof typeof v) => (e: React.ChangeEvent<HTMLInputElement>) =>
+      setV({ ...v, [key]: e.target.value });
+  return (
+    <AuthLayout
+      title="A clearer start."
+      description="Create your staff account. Verification comes first."
+    >
+      <form
+        onSubmit={async (e) => {
+          e.preventDefault();
+          const invalid = validateRegistration(v);
+          if (invalid) {
+            setError(invalid);
+            return;
+          }
+          if (!client) return;
+          setBusy(true);
+          setError("");
+          try {
+            const { error } = await client.auth.signUp({
+              email: v.email.trim(),
+              password: v.password,
+              options: {
+                emailRedirectTo: location.origin + "/verify",
+                data: {
+                  display_name: v.name.trim(),
+                  username: v.username.trim().toLowerCase(),
+                  position: v.position.trim(),
+                },
+              },
+            });
+            if (error)
+              setError(
+                "Registration could not be completed. Check the fields, use a unique username, and try again.",
+              );
+            else
+              navigate("/verify?email=" + encodeURIComponent(v.email.trim()));
+          } catch {
+            setError("Could not connect. Reconnect and try again.");
+          } finally {
+            setBusy(false);
+          }
+        }}
+      >
+        <Field
+          label="Full name"
+          required
+          maxLength={120}
+          autoComplete="name"
+          value={v.name}
+          onChange={update("name")}
+        />
+        <div className="form-grid">
+          <Field
+            label="Username"
+            required
+            maxLength={32}
+            autoComplete="username"
+            value={v.username}
+            onChange={update("username")}
+          />
+          <Field
+            label="Position (optional)"
+            maxLength={80}
+            value={v.position}
+            onChange={update("position")}
+          />
+        </div>
+        <Field
+          label="Email address"
+          required
+          type="email"
+          autoComplete="email"
+          value={v.email}
+          onChange={update("email")}
+        />
+        <PasswordField
+          required
+          minLength={8}
+          maxLength={128}
+          autoComplete="new-password"
+          value={v.password}
+          onChange={update("password")}
+        />
+        <PasswordField
+          label="Confirm password"
+          required
+          autoComplete="new-password"
+          value={v.confirm}
+          onChange={update("confirm")}
+        />
+        {error && <StatusNotice type="error">{error}</StatusNotice>}
+        <Button type="submit" disabled={busy}>
+          {busy ? "Creating account…" : "Create account →"}
+        </Button>
+        <small className="muted">
+          Position describes your work. Access permissions are granted by an
+          administrator.
+        </small>
+      </form>
+      <div className="auth-note">
+        Already registered? <Link to="/auth">Sign in</Link>
+      </div>
+    </AuthLayout>
+  );
+}

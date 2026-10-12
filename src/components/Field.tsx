@@ -1,4 +1,44 @@
-import {useId,useState,type InputHTMLAttributes} from 'react';
-import {Icon} from './Icon';
-export function Field({label,hint,...props}:InputHTMLAttributes<HTMLInputElement>&{label:string;hint?:string}){const id=useId();return <div className="field"><label htmlFor={id}>{label}</label><input id={id} {...props} aria-describedby={hint?id+'-hint':undefined}/>{hint&&<small id={id+'-hint'}>{hint}</small>}</div>;}
-export function PasswordField({label='Password',...props}:InputHTMLAttributes<HTMLInputElement>&{label?:string}){const [show,setShow]=useState(false),id=useId();return <div className="field"><label htmlFor={id}>{label}</label><div className="password-input"><input id={id} {...props} type={show?'text':'password'}/><button className="password-toggle" type="button" aria-label={`${show?'Hide':'Show'} ${label.toLowerCase()}`} aria-pressed={show} onClick={()=>setShow(!show)}><Icon name="eye"/></button></div></div>;}
+import { useId, useState, type InputHTMLAttributes } from "react";
+import { Icon } from "./Icon";
+export function Field({
+  label,
+  hint,
+  ...props
+}: InputHTMLAttributes<HTMLInputElement> & { label: string; hint?: string }) {
+  const id = useId();
+  return (
+    <div className="field">
+      <label htmlFor={id}>{label}</label>
+      <input
+        id={id}
+        {...props}
+        aria-describedby={hint ? id + "-hint" : undefined}
+      />
+      {hint && <small id={id + "-hint"}>{hint}</small>}
+    </div>
+  );
+}
+export function PasswordField({
+  label = "Password",
+  ...props
+}: InputHTMLAttributes<HTMLInputElement> & { label?: string }) {
+  const [show, setShow] = useState(false),
+    id = useId();
+  return (
+    <div className="field">
+      <label htmlFor={id}>{label}</label>
+      <div className="password-input">
+        <input id={id} {...props} type={show ? "text" : "password"} />
+        <button
+          className="password-toggle"
+          type="button"
+          aria-label={`${show ? "Hide" : "Show"} ${label.toLowerCase()}`}
+          aria-pressed={show}
+          onClick={() => setShow(!show)}
+        >
+          <Icon name="eye" />
+        </button>
+      </div>
+    </div>
+  );
+}

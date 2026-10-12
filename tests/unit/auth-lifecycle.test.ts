@@ -1,5 +1,40 @@
-import {it,expect} from 'vitest';
-import {privateStateMustClear,canEnterWorkspace,validateRegistration} from '../../src/features/auth/policy';
-it('keeps drafts on same-user refresh but clears on logout or account change',()=>{expect(privateStateMustClear('a','a')).toBe(false);expect(privateStateMustClear('a',null)).toBe(true);expect(privateStateMustClear('a','b')).toBe(true);});
-it('requires verified active approved membership before mounting workspace',()=>{for(const state of ['pending','rejected','revoked','unverified'])expect(canEnterWorkspace(state,'teacher',true)).toBe(false);expect(canEnterWorkspace('active','teacher',false)).toBe(false);expect(canEnterWorkspace('active',null,true)).toBe(false);expect(canEnterWorkspace('active','teacher',true)).toBe(true);});
-it('validates public profile fields without granting a requested position privileges',()=>{expect(validateRegistration({name:'Alex Demo',username:'alex_demo',position:'Teacher',email:'alex@example.test',password:'longDemoPassword!',confirm:'longDemoPassword!'})).toBeNull();expect(validateRegistration({name:'',username:'Admin!',position:'Administrator',email:'invalid',password:'short',confirm:'other'})).toBeTruthy();});
+import { it, expect } from "vitest";
+import {
+  privateStateMustClear,
+  canEnterWorkspace,
+  validateRegistration,
+} from "../../src/features/auth/policy";
+it("keeps drafts on same-user refresh but clears on logout or account change", () => {
+  expect(privateStateMustClear("a", "a")).toBe(false);
+  expect(privateStateMustClear("a", null)).toBe(true);
+  expect(privateStateMustClear("a", "b")).toBe(true);
+});
+it("requires verified active approved membership before mounting workspace", () => {
+  for (const state of ["pending", "rejected", "revoked", "unverified"])
+    expect(canEnterWorkspace(state, "teacher", true)).toBe(false);
+  expect(canEnterWorkspace("active", "teacher", false)).toBe(false);
+  expect(canEnterWorkspace("active", null, true)).toBe(false);
+  expect(canEnterWorkspace("active", "teacher", true)).toBe(true);
+});
+it("validates public profile fields without granting a requested position privileges", () => {
+  expect(
+    validateRegistration({
+      name: "Alex Demo",
+      username: "alex_demo",
+      position: "Teacher",
+      email: "alex@example.test",
+      password: "longDemoPassword!",
+      confirm: "longDemoPassword!",
+    }),
+  ).toBeNull();
+  expect(
+    validateRegistration({
+      name: "",
+      username: "Admin!",
+      position: "Administrator",
+      email: "invalid",
+      password: "short",
+      confirm: "other",
+    }),
+  ).toBeTruthy();
+});
