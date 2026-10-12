@@ -1,0 +1,5 @@
+Registrix original visual assets
+
+The logo artwork, icon paths and records-workspace illustration in this folder were created for this Registrix delivery. You may use, copy, modify and redistribute these original artwork assets in your project and portfolio. Attribution is not required. No third-party trademark endorsement is claimed.
+
+The wordmark SVG references native system fonts; font binaries are not included and this permission does not grant rights to redistribute fonts. See docs/asset-manifest.md for the font references and source provenance.
