@@ -1,0 +1,23 @@
+set role authenticated;
+select set_config('request.jwt.claim.sub','10000000-0000-4000-8000-000000000001',false);
+do $$declare s uuid;c1 uuid;c2 uuid;e1 uuid;e2 uuid;r jsonb;begin
+ r=public.save_student('{"actionId":"90000000-0000-4000-8000-000000000020","expectedVersion":null,"payload":{"student_no":"FIX-002","surname":"Synthetic","first_name":"Alex","gender":"other"}}');s=(r->'data'->>'id')::uuid;
+ c1=(public.save_class('{"actionId":"90000000-0000-4000-8000-000000000021","expectedVersion":null,"payload":{"subject_id":"20000000-0000-4000-8000-000000000001","course":"BSCS","year_level":1,"section":"B","semester":"1st","school_year":"2030-2031"}}')->'data'->>'id')::uuid;
+ c2=(public.save_class('{"actionId":"90000000-0000-4000-8000-000000000022","expectedVersion":null,"payload":{"subject_id":"20000000-0000-4000-8000-000000000001","course":"BSCS","year_level":1,"section":"C","semester":"1st","school_year":"2030-2031"}}')->'data'->>'id')::uuid;
+ if c1 is null or c2 is null then raise exception 'Class save failed';end if;
+ e1=(public.save_enrollment(jsonb_build_object('actionId','90000000-0000-4000-8000-000000000023','expectedVersion',null,'payload',jsonb_build_object('student_id',s,'class_id',c1)))->'data'->>'id')::uuid;
+ e2=(public.save_enrollment(jsonb_build_object('actionId','90000000-0000-4000-8000-000000000024','expectedVersion',null,'payload',jsonb_build_object('student_id',s,'class_id',c2)))->'data'->>'id')::uuid;
+ if e1 is null or e2 is null then raise exception 'Enrollment failed';end if;
+ r=public.save_grades(jsonb_build_object('actionId','90000000-0000-4000-8000-000000000025','expectedVersion',null,'payload',jsonb_build_object('enrollment_id',e1,'scores','{"monthly":88,"firstPrelim":90,"secondPrelim":91,"midterm":89,"preFinal":92,"final":90}'::jsonb)));
+ if r->'data'->'result'->>'generalAverage'<>'90.00' then raise exception 'Grade save failed %',r;end if;
+ if exists(select 1 from public.grades where enrollment_id=e2)then raise exception 'Wrong enrollment updated';end if;
+ r=public.save_grades(jsonb_build_object('actionId',gen_random_uuid(),'expectedVersion',1,'payload',jsonb_build_object('enrollment_id',e1,'scores','{}'::jsonb,'result','{}'::jsonb)));if r->>'code'<>'INVALID_REQUEST' then raise exception 'Forged result accepted';end if;
+ r=public.set_class_archived(jsonb_build_object('actionId',gen_random_uuid(),'expectedVersion',1,'payload',jsonb_build_object('id',c1,'archived',true)));if r->>'code'<>'ACTIVE_ENROLLMENTS' then raise exception 'Active class archived';end if;
+ r=public.set_enrollment_archived(jsonb_build_object('actionId',gen_random_uuid(),'expectedVersion',1,'payload',jsonb_build_object('id',e2,'archived',true)));if r->>'ok'<>'true' then raise exception 'Enrollment archive failed';end if;
+ r=public.set_student_archived(jsonb_build_object('actionId',gen_random_uuid(),'expectedVersion',1,'payload',jsonb_build_object('id',s,'archived',true)));if r->>'ok'<>'true' then raise exception 'Student archive failed';end if;
+ if public.get_grade_sheet(jsonb_build_object('class_id',c1))->'data'->>'total'<>'0' then raise exception 'Archived student active';end if;
+ r=public.set_student_archived(jsonb_build_object('actionId',gen_random_uuid(),'expectedVersion',2,'payload',jsonb_build_object('id',s,'archived',false)));
+ if public.get_grade_sheet(jsonb_build_object('class_id',c1))->'data'->>'total'<>'1' then raise exception 'Restore lost enrollment';end if;
+ if public.get_grade_sheet(jsonb_build_object('class_id',c2))->'data'->>'total'<>'0' then raise exception 'Restore reversed explicit archive';end if;
+end$$;
+reset role;

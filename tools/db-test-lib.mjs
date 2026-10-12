@@ -10,4 +10,6 @@ export async function setup(){
  await pool.query('drop schema if exists registrix_private cascade;drop schema public cascade;create schema public;drop schema if exists auth cascade');
  await pool.query(await readFile('tests/postgres/bootstrap.sql','utf8'));
  for(const f of (await readdir('supabase/migrations')).filter(x=>x.endsWith('.sql')).sort())await pool.query(await readFile('supabase/migrations/'+f,'utf8'));
+ await pool.query(await readFile('supabase/seed.sql','utf8'));
+ await pool.query(await readFile('supabase/seed.sql','utf8'));
 }

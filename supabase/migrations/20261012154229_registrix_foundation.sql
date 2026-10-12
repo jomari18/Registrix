@@ -110,7 +110,7 @@ create policy own_profile on public.profiles for select to authenticated using(i
 create policy catalog_scope on public.subjects for select to authenticated using((select registrix_private.current_role()) is not null);
 create policy class_scope on public.classes for select to authenticated using(registrix_private.can_access_class(id));
 create policy enrollment_scope on public.enrollments for select to authenticated using(registrix_private.can_access_class(class_id));
-create policy student_scope on public.students for select to authenticated using(registrix_private.can_manage_records() or exists(select 1 from public.enrollments e where e.student_id=id and registrix_private.can_access_class(e.class_id)));
+create policy student_scope on public.students for select to authenticated using(registrix_private.can_manage_records() or exists(select 1 from public.enrollments e where e.student_id=public.students.id and registrix_private.can_access_class(e.class_id)));
 create policy grade_scope on public.grades for select to authenticated using(exists(select 1 from public.enrollments e where e.id=enrollment_id and registrix_private.can_access_class(e.class_id)));
 revoke all on all tables in schema public from public,anon,authenticated;
 revoke all on all tables in schema registrix_private from public,anon,authenticated;
