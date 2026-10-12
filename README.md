@@ -1,5 +1,7 @@
 # Registrix
 
+[Live application](https://registrix.netlify.app/)
+
 React + TypeScript + Supabase conversion of a recovered desktop student-record project, using the supplied Studio Campus design and original Registrix branding.
 
 ## Run locally
