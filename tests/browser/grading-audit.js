@@ -146,8 +146,18 @@ async (page) => {
     .filter({ hasText: "Class access is no longer available." })
     .waitFor();
   check(
-    (await page.getByLabel("Final", { exact: true }).inputValue()) === "80",
-    "Revocation lost open draft",
+    (await page.getByLabel("Final", { exact: true }).count()) === 0,
+    "Revocation retained inaccessible scores",
+  );
+  check(
+    await page.evaluate(() =>
+      Object.keys(sessionStorage).every(
+        (k) =>
+          !k.startsWith("registrix:draft:") &&
+          !k.startsWith("registrix:action:"),
+      ),
+    ),
+    "Revocation retained private drafts/actions",
   );
   await page.setViewportSize({ width: 390, height: 844 });
   check(

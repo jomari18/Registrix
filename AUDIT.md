@@ -4,10 +4,10 @@ Verified on 13 October 2026. This document distinguishes local automated evidenc
 
 ## Automated evidence
 
-- 43 unit tests passed: grading boundaries and precision, catalog extraction, validation, immutable mutation recovery and auth lifecycle.
+- 45 unit tests passed: grading boundaries and precision, catalog extraction, validation, immutable mutation recovery, draft version provenance and auth lifecycle.
 - Nine PostgreSQL suites passed against isolated PostgreSQL 18: access, foundation, grades, mutations, platform permissions, records, security, subjects and replay scope. Cross-language grading vectors and concurrent write/replay checks also passed.
 - TypeScript, production build, 24 local artwork/license files and the deployable bundle scan passed. No service key, password, SMTP credential, legacy MDB or browser fixture is included in the build.
-- All eight Playwright CLI suites passed: auth, records, mutation recovery, teacher restrictions, grading, administration, responsive layouts and resilience. Tests use synthetic Auth and actual local SQL APIs, with no live email sends or hosted test records.
+- All nine Playwright CLI suites passed: auth, records, mutation recovery, teacher restrictions, grading, administration, responsive layouts, resilience and final-review regressions. Tests use synthetic Auth and actual local SQL APIs, with no live email sends or hosted test records.
 - Responsive assertions cover desktop, tablet, 390px and 360px screens, long names, broken assets, navigation, touch targets, dialogs, reduced motion and empty/error/offline states. Desktop and mobile screenshots were visually inspected. Evidence is delivered separately.
 
 ## Hosted checks
@@ -26,4 +26,4 @@ The unsupported source scope `BSED END` is withheld instead of silently relabele
 
 Physical iOS/Safari, production HTTPS redirects, provider rate limits and final hosting have not been established by the local CLI audit. This work prepares hosting files but does not publish Registrix. One transaction lock deliberately serializes mutations; partitioning it is a future scale improvement. The grade policy reflects the approved recovered source, not an institutional certification.
 
-Fresh final review and any subsequent regressions are recorded in docs/final-review.md when completed. Implementation decisions and their costs are recorded in docs/implementation-decisions.md.
+The fresh reviewer found no Critical issues and four Important client issues. All four were reproduced and fixed in one pass, followed by the complete passing suite. Mixed-score cross-language vector expansion remains a deferred minor; the browser exercises a mixed six-score average, but the SQL comparison generator uses uniform-score boundary vectors. See docs/final-review.md and docs/implementation-decisions.md.

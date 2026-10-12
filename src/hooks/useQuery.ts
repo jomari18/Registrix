@@ -6,8 +6,14 @@ export function useQuery<T>(
   load: () => Promise<T>,
   enabled = true,
 ) {
-  const { user, access } = useAuth(),
-    identity = JSON.stringify([user?.id, access?.role, key, enabled]),
+  const { user, access, accessRevision } = useAuth(),
+    identity = JSON.stringify([
+      user?.id,
+      access?.role,
+      accessRevision,
+      key,
+      enabled,
+    ]),
     [nonce, setNonce] = useState(0),
     [state, setState] = useState<{
       data: T | null;

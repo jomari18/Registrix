@@ -15,6 +15,7 @@ import { QueryState } from "../../components/QueryState";
 import { StatusNotice } from "../../components/StatusNotice";
 import { MutationNotice } from "../../components/MutationNotice";
 import { Button } from "../../components/Button";
+import { DraftConflict } from "../../components/DraftConflict";
 export function ClassForm() {
   const { id } = useParams(),
     q = useQuery(["class-edit", id], () => classesApi.get(id!), !!id);
@@ -30,7 +31,11 @@ function ClassEditor({ record }: { record?: AcademicClass }) {
       school_year: record?.school_year ?? "2026-2027",
       subject_id: record?.subject_id ?? "",
     },
-    draft = useDraft("class:" + (record?.id ?? "new"), initial),
+    draft = useDraft(
+      "class:" + (record?.id ?? "new"),
+      initial,
+      record?.version ?? null,
+    ),
     v = draft.value,
     mutation = useMutation<any, AcademicClass>(
       "save_class",
@@ -71,6 +76,9 @@ function ClassEditor({ record }: { record?: AcademicClass }) {
         description="Choose an academic group and a source-backed subject. Enrolled history stays protected."
       />
       <section className="card">
+        {draft.stale && (
+          <DraftConflict latest={initial} onDiscard={draft.reset} />
+        )}
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -82,7 +90,7 @@ function ClassEditor({ record }: { record?: AcademicClass }) {
             setError("");
             void mutation.submit(
               { ...v, ...(record ? { id: record.id } : {}) },
-              record?.version ?? null,
+              draft.baseVersion,
             );
           }}
         >
@@ -155,7 +163,10 @@ function ClassEditor({ record }: { record?: AcademicClass }) {
           {error && <StatusNotice type="error">{error}</StatusNotice>}
           <MutationNotice mutation={mutation} />
           <div className="form-actions">
-            <Button type="submit" disabled={mutation.locked || q.loading}>
+            <Button
+              type="submit"
+              disabled={mutation.locked || q.loading || draft.stale}
+            >
               Save class
             </Button>
             <Link to={record ? "/classes/" + record.id : "/classes"}>

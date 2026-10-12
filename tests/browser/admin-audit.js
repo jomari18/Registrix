@@ -127,3 +127,4 @@ async (page) => {
       "pending approval, teacher assignment/scope, revocation, last-admin protection, registrar restriction and real dashboard",
   };
 }
+

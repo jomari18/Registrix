@@ -17,6 +17,7 @@ type Auth = {
   access: Access | null;
   loading: boolean;
   error: string;
+  accessRevision: number;
   refreshAccess: () => Promise<void>;
   signOut: () => Promise<void>;
 };
@@ -30,7 +31,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null),
     [access, setAccess] = useState<Access | null>(null),
     [loading, setLoading] = useState(true),
-    [error, setError] = useState("");
+    [error, setError] = useState(""),
+    [accessRevision, setAccessRevision] = useState(0);
+  const lastAccess = useRef<Access | null>(null),
+    accessRequest = useRef(0);
+  function clearPrivateState() {
+    for (const key of Object.keys(sessionStorage))
+      if (
+        key.startsWith("registrix:draft:") ||
+        key.startsWith("registrix:action:")
+      )
+        sessionStorage.removeItem(key);
+    setAccessRevision((n) => n + 1);
+  }
   const owner = useRef<string | null>(
       sessionStorage.getItem("registrix:owner"),
     ),
@@ -39,21 +52,42 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     currentUser = useRef<User | null>(null);
   async function refreshAccess() {
     const id = currentUser.current?.id,
-      revision = generation.current;
+      revision = generation.current,
+      request = ++accessRequest.current;
     if (!id) return;
     try {
       const a = await rpc<Access>("get_my_access");
-      if (alive.current && revision === generation.current) {
+      if (
+        alive.current &&
+        revision === generation.current &&
+        request === accessRequest.current
+      ) {
+        const previous = lastAccess.current;
+        if (
+          previous &&
+          (previous.role !== a.role || previous.state !== a.state)
+        )
+          clearPrivateState();
+        lastAccess.current = a;
         setAccess(a);
         setError("");
       }
     } catch (e) {
-      if (alive.current && revision === generation.current) {
+      if (
+        alive.current &&
+        revision === generation.current &&
+        request === accessRequest.current
+      ) {
         setError(errorMessage(e));
         setAccess(null);
       }
     } finally {
-      if (alive.current && revision === generation.current) setLoading(false);
+      if (
+        alive.current &&
+        revision === generation.current &&
+        request === accessRequest.current
+      )
+        setLoading(false);
     }
   }
   function accept(next: User | null) {
@@ -64,6 +98,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         if (key.startsWith("registrix:")) sessionStorage.removeItem(key);
       owner.current = id;
       setAccess(null);
+      lastAccess.current = null;
       setError("");
       setLoading(!!next);
     }
@@ -102,10 +137,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
     window.addEventListener("focus", refresh);
     window.addEventListener("registrix-access-refresh", refresh);
+    const denied = () => {
+      clearPrivateState();
+      void refreshAccess();
+    };
+    window.addEventListener("registrix-permission-denied", denied);
     const interval = window.setInterval(refresh, 45000);
     return () => {
       window.removeEventListener("focus", refresh);
       window.removeEventListener("registrix-access-refresh", refresh);
+      window.removeEventListener("registrix-permission-denied", denied);
       window.clearInterval(interval);
     };
   }, []);
@@ -126,6 +167,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         access,
         loading,
         error,
+        accessRevision,
         refreshAccess,
         signOut,
       }}

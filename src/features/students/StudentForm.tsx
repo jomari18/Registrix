@@ -17,6 +17,7 @@ import { SelectField } from "../../components/SelectField";
 import { Button } from "../../components/Button";
 import { StatusNotice } from "../../components/StatusNotice";
 import { MutationNotice } from "../../components/MutationNotice";
+import { DraftConflict } from "../../components/DraftConflict";
 export function StudentForm() {
   const { id } = useParams(),
     q = useQuery(["student", id], () => studentsApi.get(id!), !!id);
@@ -31,7 +32,11 @@ function StudentEditor({ student }: { student?: Student }) {
       middle_initial: student?.middle_initial ?? "",
       gender: student?.gender ?? "",
     },
-    draft = useDraft("student:" + (student?.id ?? "new"), initial),
+    draft = useDraft(
+      "student:" + (student?.id ?? "new"),
+      initial,
+      student?.version ?? null,
+    ),
     mutation = useMutation<any, Student>("save_student", student?.id ?? "new"),
     [error, setError] = useState(""),
     navigate = useNavigate(),
@@ -63,6 +68,9 @@ function StudentEditor({ student }: { student?: Student }) {
         description="Start with identity details. Academic information belongs to each class enrollment."
       />
       <section className="card">
+        {draft.stale && (
+          <DraftConflict latest={initial} onDiscard={draft.reset} />
+        )}
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -78,7 +86,7 @@ function StudentEditor({ student }: { student?: Student }) {
                 student_no: normalizeStudentNumber(draft.value.student_no),
                 ...(student ? { id: student.id } : {}),
               },
-              student?.version ?? null,
+              draft.baseVersion,
             );
           }}
         >
@@ -132,7 +140,7 @@ function StudentEditor({ student }: { student?: Student }) {
           {error && <StatusNotice type="error">{error}</StatusNotice>}
           <MutationNotice mutation={mutation} />
           <div className="form-actions">
-            <Button type="submit" disabled={mutation.locked}>
+            <Button type="submit" disabled={mutation.locked || draft.stale}>
               Save student
             </Button>
             <Link to={student ? "/students/" + student.id : "/students"}>

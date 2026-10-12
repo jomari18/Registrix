@@ -21,6 +21,7 @@ import { Button } from "../../components/Button";
 import { QueryState } from "../../components/QueryState";
 import { MutationNotice } from "../../components/MutationNotice";
 import { StatusNotice } from "../../components/StatusNotice";
+import { DraftConflict } from "../../components/DraftConflict";
 const inputs = (scores?: GradeScores) =>
   Object.fromEntries(
     periods.map((key) => [
@@ -39,7 +40,11 @@ export function GradeEntry() {
 function GradeEditor({ enrollment }: { enrollment: Enrollment }) {
   const [saved, setSaved] = useState<Grade | null>(enrollment.grade),
     [baseline, setBaseline] = useState(inputs(enrollment.grade?.scores)),
-    draft = useDraft("grades:" + enrollment.id, baseline),
+    draft = useDraft(
+      "grades:" + enrollment.id,
+      baseline,
+      saved?.version ?? null,
+    ),
     mutation = useMutation<
       { enrollment_id: string; scores: GradeScores },
       Grade
@@ -73,8 +78,7 @@ function GradeEditor({ enrollment }: { enrollment: Enrollment }) {
       const grade = mutation.state.data;
       setSaved(grade);
       setBaseline(inputs(grade.scores));
-      draft.set(inputs(grade.scores));
-      draft.clear();
+      draft.commit(inputs(grade.scores), grade.version);
     }
   }, [mutation.state.data]);
   return (
@@ -97,6 +101,12 @@ function GradeEditor({ enrollment }: { enrollment: Enrollment }) {
       />
       <div className="grid2">
         <section className="card">
+          {draft.stale && (
+            <DraftConflict
+              latest={inputs(saved?.scores)}
+              onDiscard={draft.reset}
+            />
+          )}
           <div className="sectionhead">
             <h2>Six periods. One clear result.</h2>
             <span
@@ -114,10 +124,10 @@ function GradeEditor({ enrollment }: { enrollment: Enrollment }) {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              if (scores && !readOnly && !mutation.locked)
+              if (scores && !readOnly && !mutation.locked && !draft.stale)
                 void mutation.submit(
                   { enrollment_id: enrollment.id, scores },
-                  saved?.version ?? null,
+                  draft.baseVersion,
                 );
             }}
           >
@@ -150,7 +160,10 @@ function GradeEditor({ enrollment }: { enrollment: Enrollment }) {
             <MutationNotice mutation={mutation} />
             <div className="form-actions">
               {!readOnly && (
-                <Button type="submit" disabled={mutation.locked || !!error}>
+                <Button
+                  type="submit"
+                  disabled={mutation.locked || !!error || draft.stale}
+                >
                   Save grades
                 </Button>
               )}

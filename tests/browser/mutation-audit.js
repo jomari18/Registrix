@@ -80,3 +80,4 @@ async (page) => {
   });
   return { passed: "mutations" };
 }
+

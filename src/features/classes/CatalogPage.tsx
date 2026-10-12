@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { classesApi } from "./api";
 import { useQuery } from "../../hooks/useQuery";
@@ -15,14 +15,28 @@ import { MutationNotice } from "../../components/MutationNotice";
 import { StatusNotice } from "../../components/StatusNotice";
 import { ArchiveAction } from "../../components/ArchiveAction";
 import { Pagination } from "../../components/Pagination";
+import { ConfirmationDialog } from "../../components/ConfirmationDialog";
+import { useDraft } from "../../hooks/useDraft";
+import { DraftConflict } from "../../components/DraftConflict";
 export function CatalogPage() {
+  const discardEditor = useRef(() => {});
   const [search, setSearch] = useState(""),
     [page, setPage] = useState(1),
     [archived, setArchived] = useState(false),
     [edit, setEdit] = useState<Subject | null | undefined>(undefined),
+    [editorDirty, setEditorDirty] = useState(false),
+    [editorLocked, setEditorLocked] = useState(false),
+    [replacement, setReplacement] = useState<{
+      next: Subject | null | undefined;
+    } | null>(null),
     q = useQuery(["catalog", search, page, archived], () =>
       classesApi.catalog({ search, page, archived }),
     );
+  const requestEditor = (next: Subject | null | undefined) => {
+    if (editorLocked) return;
+    if (editorDirty) setReplacement({ next });
+    else setEdit(next);
+  };
   return (
     <>
       <div className="breadcrumb">
@@ -33,7 +47,9 @@ export function CatalogPage() {
         title="The academic collection."
         description="Source-backed subject labels, with protected enrolled history."
       >
-        <Button onClick={() => setEdit(null)}>Add subject</Button>
+        <Button disabled={editorLocked} onClick={() => requestEditor(null)}>
+          Add subject
+        </Button>
       </PageHeader>
       <div className="stack">
         {edit !== undefined && (
@@ -44,7 +60,12 @@ export function CatalogPage() {
               setEdit(undefined);
               q.refresh();
             }}
-            onCancel={() => setEdit(undefined)}
+            onCancel={() => requestEditor(undefined)}
+            onState={(dirty, locked, discard) => {
+              setEditorDirty(dirty);
+              setEditorLocked(locked);
+              discardEditor.current = discard;
+            }}
           />
         )}
         <section className="card">
@@ -90,7 +111,11 @@ export function CatalogPage() {
                 </p>
               </div>
               <div className="actions">
-                <Button variant="secondary small" onClick={() => setEdit(s)}>
+                <Button
+                  disabled={editorLocked}
+                  variant="secondary small"
+                  onClick={() => requestEditor(s)}
+                >
                   Edit subject
                 </Button>
                 <ArchiveAction
@@ -115,6 +140,21 @@ export function CatalogPage() {
           )}
         </section>
       </div>
+      <ConfirmationDialog
+        open={replacement !== null}
+        title="Discard this subject draft?"
+        message="Changing editors will close this unsaved subject. Cancel to keep editing it."
+        confirmLabel="Discard draft"
+        onCancel={() => setReplacement(null)}
+        onConfirm={() => {
+          if (replacement) {
+            discardEditor.current();
+            setEdit(replacement.next);
+            setReplacement(null);
+            setEditorDirty(false);
+          }
+        }}
+      />
     </>
   );
 }
@@ -122,10 +162,12 @@ function SubjectEditor({
   subject,
   onSaved,
   onCancel,
+  onState,
 }: {
   subject: Subject | null;
   onSaved: () => void;
   onCancel: () => void;
+  onState: (dirty: boolean, locked: boolean, discard: () => void) => void;
 }) {
   const initial = {
       code: subject?.code ?? "",
@@ -135,21 +177,37 @@ function SubjectEditor({
       year_level: subject?.year_level ?? 1,
       semester: subject?.semester ?? "1st",
     },
-    [v, setV] = useState(initial),
+    draft = useDraft(
+      "subject:" + (subject?.id ?? "new"),
+      initial,
+      subject?.version ?? null,
+    ),
+    v = draft.value,
+    setV = draft.set,
     [error, setError] = useState(""),
     mutation = useMutation("save_subject", subject?.id ?? "new"),
-    unsaved = useUnsavedChanges(
+    dirty =
       JSON.stringify(v) !== JSON.stringify(initial) &&
-        mutation.state.phase !== "saved",
-    );
+      mutation.state.phase !== "saved",
+    unsaved = useUnsavedChanges(dirty || mutation.locked);
   useEffect(() => {
-    if (mutation.state.phase === "saved") onSaved();
+    onState(dirty, mutation.locked, draft.clear);
+  }, [dirty, mutation.locked]);
+  useEffect(() => () => onState(false, false, () => {}), []);
+  useEffect(() => {
+    if (mutation.state.phase === "saved") {
+      draft.clear();
+      onSaved();
+    }
   }, [mutation.state.data]);
   return (
     <section className="card">
       <h2 style={{ marginBottom: 24 }}>
         {subject ? "Edit subject" : "New subject"}
       </h2>
+      {draft.stale && (
+        <DraftConflict latest={initial} onDiscard={draft.reset} />
+      )}
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -161,7 +219,7 @@ function SubjectEditor({
           setError("");
           void mutation.submit(
             { ...v, ...(subject ? { id: subject.id } : {}) },
-            subject?.version ?? null,
+            draft.baseVersion,
           );
         }}
       >
@@ -210,10 +268,15 @@ function SubjectEditor({
         {error && <StatusNotice type="error">{error}</StatusNotice>}
         <MutationNotice mutation={mutation} />
         <div className="form-actions">
-          <Button type="submit" disabled={mutation.locked}>
+          <Button type="submit" disabled={mutation.locked || draft.stale}>
             Save subject
           </Button>
-          <Button type="button" variant="secondary" onClick={onCancel}>
+          <Button
+            type="button"
+            variant="secondary"
+            disabled={mutation.locked}
+            onClick={onCancel}
+          >
             Cancel
           </Button>
         </div>

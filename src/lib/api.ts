@@ -28,8 +28,14 @@ export async function rpc<T>(name: string, request: unknown = {}): Promise<T> {
   if (!result || typeof result.ok !== "boolean")
     throw new ApiError("NETWORK", "The response could not be verified.");
   if (!result.ok) {
-    if (result.code === "FORBIDDEN")
-      window.dispatchEvent(new Event("registrix-access-refresh"));
+    if (result.code === "FORBIDDEN") {
+      // Reads already clear their query on rejection. Mutations/receipt recovery
+      // must also invalidate the open editor, even when the role is unchanged.
+      if (name === "find_my_action" || !/^(get_|list_)/.test(name))
+        window.dispatchEvent(new Event("registrix-permission-denied"));
+      else if (name !== "get_my_access")
+        window.dispatchEvent(new Event("registrix-access-refresh"));
+    }
     throw new ApiError(result.code, result.message);
   }
   return result.data;

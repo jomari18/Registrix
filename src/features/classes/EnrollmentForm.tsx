@@ -36,7 +36,8 @@ export function EnrollmentForm({
       "save_enrollment",
       studentId ?? classId!,
     ),
-    q = studentId ? classes : students;
+    q = studentId ? classes : students,
+    visibleSelection = !!q.data?.items.some((item) => item.id === selected);
   useEffect(() => {
     if (mutation.state.phase === "saved") {
       setSelected("");
@@ -59,6 +60,7 @@ export function EnrollmentForm({
           onChange={(e) => {
             setSearch(e.target.value);
             setPage(1);
+            setSelected("");
           }}
         />
         <SelectField
@@ -84,13 +86,23 @@ export function EnrollmentForm({
       </div>
       <QueryState query={q} />
       {q.data && q.data.total > 20 && (
-        <Pagination page={page} total={q.data.total} onChange={setPage} />
+        <Pagination
+          page={page}
+          total={q.data.total}
+          onChange={(next) => {
+            setSelected("");
+            setPage(next);
+          }}
+        />
       )}
       <MutationNotice mutation={mutation} />
       <div className="actions" style={{ marginTop: 20 }}>
         <Button
-          disabled={!selected || mutation.locked}
+          disabled={!visibleSelection || q.loading || mutation.locked}
           onClick={() =>
+            visibleSelection &&
+            !q.loading &&
+            !mutation.locked &&
             void mutation.submit(
               {
                 student_id: studentId ?? selected,
