@@ -12,3 +12,4 @@ preview/
 qa.cjs
 .playwright-cli/
 *.log
+supabase/.temp/
