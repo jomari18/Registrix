@@ -32,6 +32,11 @@ async (page) => {
     )) === "keep",
     "Same-user hydration erased a draft",
   );
+  await page.goto("http://127.0.0.1:5192/reset-password");
+  check((await page.getByLabel("New password", { exact: true }).count()) === 0, "Ordinary session bypassed recovery OTP on legacy reset route");
+  await page.getByLabel("Email address", { exact: true }).waitFor();
+  await page.goto("http://127.0.0.1:5192/");
+  await page.getByRole("navigation", { name: "Main navigation", exact: true }).waitFor();
   await page.getByRole("button", { name: "Sign out", exact: true }).click();
   await page.getByRole("dialog").waitFor();
   await page.getByRole("button", { name: "Cancel", exact: true }).click();
@@ -91,7 +96,7 @@ async (page) => {
     .getByLabel("Email address", { exact: true })
     .fill("fresh@example.test");
   await page
-    .getByRole("button", { name: "Send reset instructions", exact: true })
+    .getByRole("button", { name: "Send recovery code", exact: true })
     .click();
   await page.getByRole("status").waitFor();
   console.log(
