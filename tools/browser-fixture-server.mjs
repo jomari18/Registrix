@@ -23,7 +23,7 @@ const server=http.createServer(async(req,res)=>{
  const send=(status,data)=>{res.writeHead(status,{'content-type':'application/json'});res.end(JSON.stringify(data));};
  try{
   const url=new URL(req.url,'http://127.0.0.1:55445');let raw='';for await(const chunk of req){raw+=chunk;if(raw.length>100000)throw Error('Request too large');}const body=raw?JSON.parse(raw):{};
-  if(url.pathname==='/health'){send(200,{synthetic:true});return;}
+  if(url.pathname==='/health'){send(200,{synthetic:true,controls});return;}
   if(url.pathname==='/__fixture'){
    if(body.op==='control')Object.assign(controls,{drop:'',delay:'',fail:''},body.values);
    if(body.op==='revoke')await pool.query("update registrix_private.memberships set state='revoked' where user_id=$1",[ids[body.actor]]);
@@ -51,7 +51,7 @@ const server=http.createServer(async(req,res)=>{
    if(controls.delay===name){controls.delay='';await new Promise(r=>setTimeout(r,1800));}
    if(controls.fail===name){controls.fail='';send(503,{message:'Simulated unavailable server'});return;}
    const result=await actor(u.id,async c=>name==='get_my_access'?(await c.query('select public.get_my_access()result')).rows[0].result:await rpc(c,name,body.p_request??{}));
-   if(controls.drop===name){controls.drop='';req.socket.destroy();return;}send(200,result);return;
+   if(controls.drop===name){controls.drop='';send(503,{message:'The database committed; simulated gateway lost its response.'});return;}send(200,result);return;
   }
   send(404,{message:'No fixture endpoint'});
  }catch(error){console.error('Fixture:',error.message);send(400,{message:'Synthetic fixture request failed'});}
