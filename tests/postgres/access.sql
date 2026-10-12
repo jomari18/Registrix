@@ -8,12 +8,12 @@ set role authenticated;
 select set_config('request.jwt.claim.sub','10000000-0000-4000-8000-000000000003',false);
 do $$declare r jsonb;begin
  r=public.save_student('{"actionId":"90000000-0000-4000-8000-000000000001","expectedVersion":null,"payload":{"student_no":"X","surname":"X","first_name":"X","gender":"other"}}');
- if r->>'code'<>'FORBIDDEN' then raise exception 'Teacher can manage students: %',r;end if;
- r=public.list_students('{}');if r->'data'->>'total'<>'0' then raise exception 'Unassigned teacher leak';end if;
- r=public.list_staff('{}');if r->>'code'<>'FORBIDDEN' then raise exception 'Teacher staff leak';end if;
+ if r->>'code' is distinct from 'FORBIDDEN' then raise exception 'Teacher can manage students: %',r;end if;
+ r=public.list_students('{}');if r->'data'->>'total' is distinct from '0' then raise exception 'Unassigned teacher leak';end if;
+ r=public.list_staff('{}');if r->>'code' is distinct from 'FORBIDDEN' then raise exception 'Teacher staff leak';end if;
 end$$;
 select set_config('request.jwt.claim.sub','10000000-0000-4000-8000-000000000002',false);
-do $$begin if public.review_staff_access('{"actionId":"90000000-0000-4000-8000-000000000002","payload":{}}')->>'code'<>'FORBIDDEN' then raise exception 'Registrar escalation';end if;end$$;
+do $$begin if public.review_staff_access('{"actionId":"90000000-0000-4000-8000-000000000002","payload":{}}')->>'code' is distinct from 'FORBIDDEN' then raise exception 'Registrar escalation';end if;end$$;
 select set_config('request.jwt.claim.sub','10000000-0000-4000-8000-000000000005',false);
-do $$begin if public.list_students('{}')->>'code'<>'FORBIDDEN' then raise exception 'Unverified access';end if;end$$;
+do $$begin if public.list_students('{}')->>'code' is distinct from 'FORBIDDEN' then raise exception 'Unverified access';end if;end$$;
 reset role;
