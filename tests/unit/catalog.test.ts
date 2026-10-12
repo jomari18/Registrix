@@ -1,0 +1,6 @@
+import {it,expect} from 'vitest';
+import {readFileSync} from 'node:fs';
+import {extractCatalog} from '../../src/domain/catalog';
+const source=()=>readFileSync('.local-source/StudentReg.cs','utf8');
+it('extracts scoped academic entries directly from C# text',()=>{const r=extractCatalog(source());expect(r.entries).toContainEqual({code:'(BSCS)CC101',description:'Introduction to Computing',units:3,course:'BSCS',yearLevel:1,semester:'1st'});expect(r.groups).toBe(65);expect(r.entries.length).toBeGreaterThan(350);for(const e of r.entries){expect(e.units).toBeGreaterThan(0);expect(e.units).toBeLessThanOrEqual(30);expect(e.description.length).toBeGreaterThan(0);}expect(JSON.stringify(r.entries)).not.toMatch(/password|@gmail|St\.? Clare/i);});
+it('holds conflicting descriptions out instead of overwriting',()=>{const s=`if(cbCourse.Text == "BSCS" && cbYearAndLevel.Text == "1ST" && cbSemester.Text == "1ST"){cbSubjectCode.Items.Add("TEST");} if((string)cbSubjectCode.SelectedItem == "TEST"){tbSubjectDescription.Text="Alpha";tbUnits.Text="3";} else if((string)cbSubjectCode.SelectedItem == "TEST"){tbSubjectDescription.Text="Beta";tbUnits.Text="2";}`;const r=extractCatalog(s);expect(r.entries).toHaveLength(0);expect(r.issues.some(x=>x.code==='TEST'&&x.kind==='conflict')).toBe(true);});

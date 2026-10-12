@@ -1,0 +1,3258 @@
+[
+  {
+    "code": "(BSCS)CC101",
+    "description": "Introduction to Computing",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)CC102",
+    "description": "Fundamentals of Programming",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)GE1",
+    "description": "Communications Skills 1",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)GE2",
+    "description": "Komunikasyon sa Akademikong Filipino",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)GE3",
+    "description": "College Algebra",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)NSTP1",
+    "description": "National Service Training Program 1",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)PE1",
+    "description": "Physical Fitness",
+    "units": 2,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)PDP1",
+    "description": "Professional Development Program 1",
+    "units": 2,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)CC103",
+    "description": "Intermediate Programming",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)DS101",
+    "description": "Discrete Structures 1",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)GE4",
+    "description": "Communications Skills 2",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)GE5",
+    "description": "Pagbasa at Pagsulat Tungo sa Pananaliksik",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)GE6",
+    "description": "Art Appreciation",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)NSTP2",
+    "description": "National Service Training Program 2",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)PE2",
+    "description": "Rhythmic Activities",
+    "units": 2,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)PDP2",
+    "description": "Professional Development Program 2",
+    "units": 2,
+    "course": "BSCS",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)GE7",
+    "description": "Speech and Oral Communication",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)GE8",
+    "description": "Probabilities and Statistics",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)CC104",
+    "description": "Data Structure and Algorithms",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)DS102",
+    "description": "Discrete Structures 2",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)SDF104",
+    "description": "Object-oriented Programming",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)PE3",
+    "description": "Individual & Dual Sports",
+    "units": 2,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)PDP3",
+    "description": "Professional Development Program 3",
+    "units": 2,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)CC105",
+    "description": "Information Management",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)GE9",
+    "description": "College Physics",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)GE10",
+    "description": "Introduction to Literature including Phil. Setting",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)AL101",
+    "description": "Algorithms and Complexity",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)MATHELE",
+    "description": "Discrete Mathematics",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)PE4",
+    "description": "Team Sports",
+    "units": 2,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)PDP4",
+    "description": "Professional Development Program 4",
+    "units": 2,
+    "course": "BSCS",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)CC106",
+    "description": "Applications Development and Emerging Technologies",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)GE11",
+    "description": "Trigonometry",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)GE12",
+    "description": "Philosophy of Man and Ethics",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)AL102",
+    "description": "Automata Theory and Formal Languages",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)AR101",
+    "description": "Architecture and Organization",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)IAS101",
+    "description": "Information Assurance and Security",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)GC101",
+    "description": "Graphics and Visual Computing (elective)",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)GE13",
+    "description": "Electricity & Electromagnetism",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)GE14",
+    "description": "Life and Works of Rizal",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)PL101",
+    "description": "Programming Languages",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)SE101",
+    "description": "Software Engineering 1",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)SP101",
+    "description": "Social Issues and Professional Practice",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)IS101",
+    "description": "Intelligent Systems (elective)",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)CN101",
+    "description": "Computational Science",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)GE15",
+    "description": "Philippine History and Culture",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)GE16",
+    "description": "Politics & Governance (w/ Philippine Constitution)",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)OS101",
+    "description": "Operating Systems",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)SE102",
+    "description": "Software Engineering 2",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)SF101",
+    "description": "System Fundamentals (elective)",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)HCI101",
+    "description": "Human Computer Interaction",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)THS101",
+    "description": "CS Thesis Writing 1",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSCS)NC101",
+    "description": "Networks and Communications",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)GE17",
+    "description": "Economics (w/ Taxation & Agrarian Reform Integrated)",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)GE18",
+    "description": "Asian/Western Civilization",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)PD101",
+    "description": "Parallel and Distributed Computing",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)THS102",
+    "description": "CS Thesis Writing 2",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSCS)PRAC101",
+    "description": "Practicum (200hrs.)",
+    "units": 3,
+    "course": "BSCS",
+    "yearLevel": 4,
+    "semester": "summer"
+  },
+  {
+    "code": "(BSTM)THC1",
+    "description": "Tourism in the Hospitality 1",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)THC2",
+    "description": "Risk Management as Applied to Safety, Security and Sanitation",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)GE1",
+    "description": "Purposive Communication",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)GE2",
+    "description": "Readings in Philippine History",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)GE3",
+    "description": "Mathematics in the Modern World",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)NSTP1",
+    "description": "National Service Training Program 1",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)PE1",
+    "description": "Physical Fitness",
+    "units": 2,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)PDP1",
+    "description": "Professional Development Program 1",
+    "units": 2,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)TPC1",
+    "description": "Global Tourism, Geography & Culture Quality Management",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)THC3",
+    "description": "Philippine Tourism, Geography and Culture",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)THC5",
+    "description": "Tourism and Hospitality 2",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)TMCC1",
+    "description": "Tour and Travel Management",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)NSTP2",
+    "description": "National Service Training Program 2",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)PE2",
+    "description": "Rhythmic Activities",
+    "units": 2,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)PDP2",
+    "description": "Professional Development Program 2",
+    "units": 2,
+    "course": "BSTM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)GE4",
+    "description": "Understanding the Self",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)GE ELECTIVE 1",
+    "description": "Environmental Science",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)TPC2",
+    "description": "Applied Business Tools and Technologies(GDS) with Lab (TPC)",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)TPC3",
+    "description": "Sustainable Tourism",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)HMPE1",
+    "description": "Heritage Tourism",
+    "units": 2,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)PE3",
+    "description": "Individual and Dual Sports",
+    "units": 2,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)PDP3",
+    "description": "Professional Development Program 3",
+    "units": 2,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)GE5",
+    "description": "Science, Technology and Society",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)GE6",
+    "description": "Ethics",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)TPC4",
+    "description": "Tourism Policy Planning and Development",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)TPC5",
+    "description": "Introduction to MICE",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)TPC6",
+    "description": "Foreign Language 1 (TPC)",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)HMPE2",
+    "description": "Tour Guiding",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)PDP4",
+    "description": "Professional Development Program 4",
+    "units": 2,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)PE4",
+    "description": "Team Sports",
+    "units": 2,
+    "course": "BSTM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)TPC7",
+    "description": "Foreign Language 2",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)HMPE3",
+    "description": "Ecotourism Management",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)BME1",
+    "description": "Operations Management in TH  Industry",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)THC6",
+    "description": "Professional Development & Applied Ethics",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)THC7",
+    "description": "Tourism and Hospitality Marketing",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)MICE1",
+    "description": "Meetings Management",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)THC8",
+    "description": "Legal Aspects in Tourism and Hospitality",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)BME2",
+    "description": "Strategic Management in TH 1",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)HMPE4",
+    "description": "Cruise Tourism",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)THC9",
+    "description": "SMulticultural Diversity in Workplace for the  Tourism Professional",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)THC10",
+    "description": "Entrepreneurship in TH",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)TPC8",
+    "description": "Transportation Management",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)MICE2",
+    "description": "Incentives Management",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)HMPE5",
+    "description": "Airlines Operation",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)RIZAL",
+    "description": "Life and Works of Rizal",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)TPC9",
+    "description": "Research in Tourism",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)GE ELECTIVE 2",
+    "description": "Religions, Religious Experiences and Spirituality",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)GE ELECTIVE 3",
+    "description": "Philippine Popular Culture",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)GE8",
+    "description": "Art Appreciation",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSTM)PRAC",
+    "description": "Practicum (600 hrs.)",
+    "units": 3,
+    "course": "BSTM",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)GE1",
+    "description": "Purposive Communication",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)GE2",
+    "description": "Readings in Philippine History",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)GE3",
+    "description": "Mathematics in the Modern World",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)THC1",
+    "description": "Macro Perspective of Tourism and Hospitality 1",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)THC2",
+    "description": "Risk Management as Applied to Safety, Security and Sanitation",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)NSTP1",
+    "description": "National Service Training Program 1",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)PE1",
+    "description": "Physical Fitness",
+    "units": 2,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)PDP1",
+    "description": "Professional Development Program 1",
+    "units": 2,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)THC3",
+    "description": "Quality Service Management in Tourism and Hospitality",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)THC4",
+    "description": "Philippine Tourism, Geography and Culture",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)THC5",
+    "description": "Micro Perspective of Tourism and Hospitality",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)HPC1",
+    "description": "Kitchen Essentials and Basic Food Preparation",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)HPC2",
+    "description": "Fundamentals in Lodging Operations",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)NSTP2",
+    "description": "National Service Training Program 2",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSTM)PE2",
+    "description": "Rhythmic Activities",
+    "units": 2,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)PDP2",
+    "description": "Professional Development Program 2",
+    "units": 2,
+    "course": "BSHM",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)GE4",
+    "description": "Understanding the Self",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)GE Elec1",
+    "description": "Environmental Science",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)HPC3",
+    "description": "Applied Bus Tools and Technologies (PMS) with Lab",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)HPC4",
+    "description": "Supply Chain Management in Hospitality Industry",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)HPC5",
+    "description": "Foreign Language 1",
+    "units": 2,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)HMPE1",
+    "description": "Asian Cuisine",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)PE3",
+    "description": "Individual and Dual Sports",
+    "units": 2,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)PDP3",
+    "description": "Professional Development Program 3",
+    "units": 2,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)GE5",
+    "description": "Science, Technology and Society",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)GE6",
+    "description": "Ethics",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)HPC6",
+    "description": "Fundamentals in Food Service Operations",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)HPC7",
+    "description": "Introduction to MICE",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)HMPE2",
+    "description": "Bread and Pastry",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)HPC8",
+    "description": "Foreign Language 2 (HPC)",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)HMPE3",
+    "description": "Cruise Ship Management",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)PE4",
+    "description": "Team Sports",
+    "units": 2,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)PDP4",
+    "description": "Professional Development Program 4",
+    "units": 2,
+    "course": "BSHM",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)GE7",
+    "description": "The Contemporary World",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)HMPE4",
+    "description": "Bar and Beverage Management w/ lab",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)HMPE5",
+    "description": "Front Office Operation",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)BME1",
+    "description": "Operations Management in TH Industry",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)THC6",
+    "description": "Professional Development & Applied Ethics",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)THC7",
+    "description": "Tourism and Hospitality Marketing",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)THC8",
+    "description": "Legal Aspects in Tourism and Hospitality",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)BME2",
+    "description": "Strategic Management in Tourism and Hospitality",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)THC10",
+    "description": "Entrepreneurship in Tourism and Hospitality",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)THC9",
+    "description": "Multicultural Diversity in Workplace for the Tourism Professional",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)HPC9",
+    "description": "Ergonomics and Facilities Planning for the Hospitality Industry",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)HMPE6",
+    "description": "Catering Management",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSHM)HMPE7",
+    "description": "Cost Control",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)GE8",
+    "description": "Art Appreciation",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)HPC10",
+    "description": "Research in Hospitality",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)GE Elec2",
+    "description": "Religions, Religious Experiences and Spirituality",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)GE Elec3",
+    "description": "Philippine Popular Culture",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)GE9",
+    "description": "Life and Works of Rizal",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSHM)PRAC",
+    "description": "Practicum (600 hrs.)",
+    "units": 3,
+    "course": "BSHM",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)GE1",
+    "description": "Understanding the Self",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)GE2",
+    "description": "Readings in Philippine History",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)GE3",
+    "description": "The Contemporary World",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)GE4",
+    "description": "Mathematics in the Modern World",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)NSTP 1",
+    "description": "National Service Training Program 1",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)PE 1",
+    "description": "Physical Fitness",
+    "units": 2,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)PDP 1",
+    "description": "Professional Development Program 1",
+    "units": 2,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)GE5",
+    "description": "Quality Service Management in Tourism and Hospitality",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)GE6",
+    "description": "Philippine Tourism, Geography and Culture",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)GE7",
+    "description": "Micro Perspective of Tourism and Hospitality",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)GE8",
+    "description": "Kitchen Essentials and Basic Food Preparation",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)BA 1",
+    "description": "Fundamentals in Lodging Operations",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)NSTP 2",
+    "description": "National Service Training Program 2",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)PE 2",
+    "description": "Rhythmic Activities",
+    "units": 2,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)PDP 2",
+    "description": "Professional Development Program 2",
+    "units": 2,
+    "course": "BSBA",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)GE9",
+    "description": "Rizal's Life and Works",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)GE Elective 1",
+    "description": "Mathematics, Science & Technology",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)GE Elective 2",
+    "description": "Social Science and Philosophy",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)BA CC 1",
+    "description": "Basic Microeconomics",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)BA 2",
+    "description": "Behavioural Finance",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)Prof. 1",
+    "description": "Cooperative Management",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)PE 3",
+    "description": "Individual and Dual Sports",
+    "units": 2,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)PDP 3",
+    "description": "Professional Development Program 3",
+    "units": 2,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)GE Elective 3",
+    "description": "Arts & Humanities",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)Prof Elective",
+    "description": "Franchising",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)BA CC 2",
+    "description": "Business Law (Obligations and Contracts)",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)BA CC 3",
+    "description": "Taxation (Income Taxation)",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)Prof. 2",
+    "description": "Financial Analysis and Reporting",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)Prof. 3",
+    "description": "Banking and Financial Institution",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)PE 4",
+    "description": "Team Sports",
+    "units": 2,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)PDP 4",
+    "description": "Professional Development Program 4",
+    "units": 2,
+    "course": "BSBA",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)CBMEC",
+    "description": "Strategic Management",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)BA CC 4",
+    "description": "Good Governance and Social Responsibility",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)BA CC 5",
+    "description": "Human Resource Managements",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)Prof. 4",
+    "description": "Monetary Policy and Central Banking",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)Prof. 5",
+    "description": "Investment and Portfolio Management",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)BA 3",
+    "description": "Global Finance with Electronic Banking",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)BMEC",
+    "description": "Operations Management (TQM)",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)Prof. 6",
+    "description": "Credit and Collection",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)Prof. 7",
+    "description": "Capital Market ",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)Elective 1",
+    "description": "Risk management",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)BA 5",
+    "description": "Treasury Management",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)Prof. 8",
+    "description": "The Political Economy and Trade Policy",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)Elective 2",
+    "description": "Entrepreneurial Management",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)Elective 3",
+    "description": "Project Management",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)BA CC 8",
+    "description": "Feasibility Study",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)Prof Elec 4",
+    "description": "Venture Capital",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)BA 6",
+    "description": "Mutual Capital",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSBA)Elective 4",
+    "description": "Public Finance ",
+    "units": 3,
+    "course": "BSBA",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSBA)Practicum",
+    "description": "Work Integrated Learning",
+    "units": 6,
+    "course": "BSBA",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)GE1",
+    "description": "Purposive Communication",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)GE2",
+    "description": "Life and Works of Rizal",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)GE3",
+    "description": "Understanding the Self",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)SOCSCI 101",
+    "description": "Foundation of Behavioral Science",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)BAPOL 1",
+    "description": "Fundamentals of Political Science",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)NSTP 1",
+    "description": "National Service Training Program 1",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)PE 1",
+    "description": "Physical Fitness",
+    "units": 2,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)GE4",
+    "description": "Mathematics in the Modern World",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)GE5",
+    "description": "Readings in Philippine History",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)BAPOL 2",
+    "description": "Introduction to Philippine Politics    and Governance",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)GE6",
+    "description": "Art Appreciation",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)NSTP 2",
+    "description": "National Service Training Program 2",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)PE 2",
+    "description": "Rhythmic Activities",
+    "units": 2,
+    "course": "AB POLSCI",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)GE7",
+    "description": "Ethics",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)BAPOL 3",
+    "description": "Introduction to Political Analysis and Research",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)GE8",
+    "description": "The Contemporary World",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)SOCSCI 0",
+    "description": "Arguementation and Debate",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)PE 3",
+    "description": "Individual and Dual Sports",
+    "units": 2,
+    "course": "AB POLSCI",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)GE9",
+    "description": "Science, Technology and Society",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)BAPOL 4",
+    "description": "Introduction to Political Theory",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)BAPOL 5",
+    "description": "Qualitative and Quantitative Analysis of Political Data",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)PE 4",
+    "description": "Team Sports",
+    "units": 2,
+    "course": "AB POLSCI",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)BAPOL 6",
+    "description": "Introduction to Comparative Government and Politics",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)BAPOL 7",
+    "description": "Philippine Public Administration",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)POL ELE 1",
+    "description": "Public International Law for Political Science",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)O ELE 1",
+    "description": "E-GOVERNANCE",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)FRE ELE 1",
+    "description": "Political Development in the Developing World",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)BAPOL 8",
+    "description": "Introduction to International Relations",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)BAPOL 9",
+    "description": "Politics and Governance in Southeast Asia",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)POL ELE 2",
+    "description": "Global Political Forces and Environmental Change",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)O ELE 2",
+    "description": "International Political Economy",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)FRE ELE 2",
+    "description": "Law, Politics and Society",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)POL ELE 3",
+    "description": "Public Policy Analysis and Planning",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)FRE ELE 3",
+    "description": "International Conflict Resolution, Political Violence and Peace studies",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)BAPOL 10",
+    "description": "PRACTICUM",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(AB POLSCI)O ELE 3",
+    "description": "Local Government and Development Management",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)FRE ELE 4",
+    "description": "Seminar in Political Science",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(AB POLSCI)FRE ELE 5",
+    "description": "Reseach in Political Science",
+    "units": 3,
+    "course": "AB POLSCI",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)GE1",
+    "description": "Understanding the Self",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)GE2",
+    "description": "Readings in Philippine History",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)GE3",
+    "description": "The Contemporary World",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)GE4",
+    "description": "Mathematics in the Modern World",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)GE5",
+    "description": "Purposive Communication",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)GE6",
+    "description": "Art Appreciation",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)EDUC101",
+    "description": "The Child and Adolescent Learners and Learning Principles",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)NSTP 1",
+    "description": "National Service Training Program 1",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)PE 1",
+    "description": "Physical Fitness",
+    "units": 2,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)PDP 1",
+    "description": "Professional Development Program 1",
+    "units": 2,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)GE7",
+    "description": "Science, Technology and Society",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)GE8",
+    "description": "Ethics",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)GE9",
+    "description": "Living in the IT Era ",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)GE10",
+    "description": "Gender and Society",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)GE11",
+    "description": "Reading Visual Arts",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)GE12",
+    "description": "Life and Works of Rizal",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)EDUC102",
+    "description": "The Teaching Profession",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)NSTP 2",
+    "description": "National Service Training Program 2",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)PE 2",
+    "description": "Rhythmic Activities",
+    "units": 2,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)PDP 2",
+    "description": "Professional Development Program 2",
+    "units": 2,
+    "course": "BEED",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)TTL1",
+    "description": "Technology for Teaching and Learning 1",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)EDUC103",
+    "description": "Facilitating Learner-Centered Teaching",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)SCI1",
+    "description": "Teaching Science in Elementary Grades (Biology and Chemistry)",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)MATH1",
+    "description": "Teaching Math in the Primary Grades",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)SSC1",
+    "description": "Teaching Social Studies in Elementary Grades(Philippine History & Government)",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)FIL1",
+    "description": "Pagtuturo and Filipino sa Elementarya (I) - Estruktura at Gamit ng Wikang Filipino",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)VED",
+    "description": "Good Manners and Right Conduct (Edukasyon sa Pagpapakatao)",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)PE 3",
+    "description": "Individual and Dual Sports",
+    "units": 2,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)PDP 3",
+    "description": "Professional Development Program 3",
+    "units": 2,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)EDUC104",
+    "description": "Building and Enhancing New Literacies Across the Curriculum",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)EDUC105",
+    "description": "Foundation of Special and Inclusive Education",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)SCI2",
+    "description": "Teaching Science in the Elementary Grades (Physics, Earth and Space Science)",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)MATH2",
+    "description": "Teaching Math in the Intermediate Grades",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)MTB-MLE",
+    "description": "Content and Pedagogy for the Mother - Tongue",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)SSC2",
+    "description": "Teaching Social Studies in the Elementary Grades(Culture and Geography)",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)TLE1",
+    "description": "Edukasyong Pantahanan at Pangkabuhayan",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)PE 4",
+    "description": "Team Sports",
+    "units": 2,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)PDP 4",
+    "description": "Professional Development Program 4",
+    "units": 2,
+    "course": "BEED",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)ENG1",
+    "description": "Teaching English in the Elementary Grades  (Language Arts)",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)EDUC106",
+    "description": "The Teacher and the School Curriculum",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)TTL2",
+    "description": "Technology for Teaching in the Elementary Grades",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)MUSIC",
+    "description": "Teaching Music in the Elementary Grades",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)ENG2",
+    "description": "Teaching English in the Elementary Grades  Through Literature",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)ARTS",
+    "description": "Teaching Arts in the Elementary  Grades",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)EDUC108",
+    "description": "Assessment in Learning 2",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)EDUC109",
+    "description": "The Teacher and the Community , School  Culture and Organizational Leadership",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)ELEC",
+    "description": "Teaching Multi-grade Classes",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)PEH",
+    "description": "Teaching PE and Health in the Elementary Grades",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)FIL2",
+    "description": "Pagtuturo ng Filipino sa Elementarya  (II) Panitikan ng Pilipinas",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)RES",
+    "description": "Research in Education",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)TLE2",
+    "description": "Edukasyon Pantahanan at Pangkabuhayan with Entrepreneurship",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BEED)FS1",
+    "description": "Field Study 1 (In-campus)",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)FS2",
+    "description": "Field Study 2 (In-campus)",
+    "units": 3,
+    "course": "BEED",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BEED)TI",
+    "description": "Teaching Internship  (Off-campus)",
+    "units": 6,
+    "course": "BEED",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M100",
+    "description": "History of Mathematics",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)M101",
+    "description": "College and Advanced Algebra",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)TSF",
+    "description": "Teaching in the Specialized Field",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)GE1",
+    "description": "Understanding the Self",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)GE2",
+    "description": "Readings in Philippine History",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)GE3",
+    "description": "The Contemporary World",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)GE4",
+    "description": "Mathematics in the Modern World",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)NSTP 1",
+    "description": "National Service Training Program 1",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)PE 1",
+    "description": "Physical Fitness",
+    "units": 2,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)M102",
+    "description": "Trigonometry",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M103",
+    "description": "Plane and Solid Geometry",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M104",
+    "description": "Logic and Set Theory",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)GE5",
+    "description": "Purposive Communication",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)GE6",
+    "description": "Art Appreciation",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)GE7",
+    "description": "Science, Technology and Society",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)GE8",
+    "description": "Ethics",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)NSTP 2",
+    "description": "National Service Training Program 2",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)PE 2",
+    "description": "Rhythmic Activities",
+    "units": 2,
+    "course": "BSED MATH",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M106",
+    "description": "Calculus I with Analytic Geometry",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)M109",
+    "description": "Modern Geometry",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)M110",
+    "description": "Mathematics of Investment",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)GE9",
+    "description": "Living in the IT Era",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)GE10",
+    "description": "Gender and Society",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)EDUC101",
+    "description": "The Child and Adolescent Learner and Learning Principles",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)TP",
+    "description": "The Teaching Profession",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)PE 3",
+    "description": "Individual and Dual Sports",
+    "units": 2,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)M107",
+    "description": "Calculus 2",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M111",
+    "description": "Number Theory",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M112",
+    "description": "Linear Algebra",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M105",
+    "description": "Elementary Statistics and Probability",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)GE11",
+    "description": "Reading Visual Arts",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)GE12",
+    "description": "Life and Works of Rizal",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)EDUC109",
+    "description": "The Teacher and the Community , School Culture and Organizational Leadership",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)PE 4",
+    "description": "Team Sports",
+    "units": 2,
+    "course": "BSED MATH",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M108",
+    "description": "Calculus 3",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)M113",
+    "description": "Advanced Statistics",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)M115",
+    "description": "Problem Solving, Mathematical Investigation and Modeling",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)M116",
+    "description": "Principles and Strategies in Teaching Mathematics",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)EDUC103",
+    "description": "Facilitating Learner-Centered Teaching",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)EDUC105",
+    "description": "Foundation of Special  and Inclusive Education",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)EDUC107",
+    "description": "Assessment in Learning 1",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)TTL1",
+    "description": "Technology for Teaching and Learning 1",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)M114",
+    "description": "Abstract Algebra",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M117",
+    "description": "Technology for Teaching and Learning 2 (Instrumentation & Technology in Mathematics)",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M118",
+    "description": "Research in Mathematics",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)M119",
+    "description": "Assessment and Evaluation in Mathematics",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)EDUC104",
+    "description": "Building and Enhancing New Literacies Across the Curriculum",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)EDUC106",
+    "description": "The Teacher and the School Curriculum",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)EDUC108",
+    "description": "Assessment in Learning 2",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED MATH)FS1",
+    "description": "Field Study 1 (In-campus)",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)FS2",
+    "description": "Field Study 2 (In-campus)",
+    "units": 3,
+    "course": "BSED MATH",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED MATH)TI",
+    "description": "Teaching Internship  (Off-campus)",
+    "units": 6,
+    "course": "BSED MATH",
+    "yearLevel": 4,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)LING1",
+    "description": "Introduction to Linguistics",
+    "units": 3,
+    "course": "BSED END",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)LING2",
+    "description": "Language, Culture and Society",
+    "units": 3,
+    "course": "BSED END",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)LING3",
+    "description": "Structures of English",
+    "units": 3,
+    "course": "BSED END",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)GE1",
+    "description": "Understanding the Self",
+    "units": 3,
+    "course": "BSED END",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)GE2",
+    "description": "Readings in Philippine History",
+    "units": 3,
+    "course": "BSED END",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)GE3",
+    "description": "The Contemporary World",
+    "units": 3,
+    "course": "BSED END",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)GE4",
+    "description": "Mathematics in the Modern World",
+    "units": 3,
+    "course": "BSED END",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)NSTP 1",
+    "description": "National Service Training Program 1",
+    "units": 3,
+    "course": "BSED END",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)PE 1",
+    "description": "Physical Fitness",
+    "units": 2,
+    "course": "BSED END",
+    "yearLevel": 1,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)ELT1",
+    "description": "Principles and Theories of Language Acquisition and Learning",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)ELT2",
+    "description": "Language Programs and Policies in Multilingual Societies",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)ELT3",
+    "description": "Language Learning Materials Development",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)GE5",
+    "description": "Purposive Communication",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)GE6",
+    "description": "Art Appreciation",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)GE7",
+    "description": "Science, Technology and Society",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)EDUC101",
+    "description": "The Child and Adolescent Learner and Learning Principles",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)NSTP 2",
+    "description": "National Service Training Program 2",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)PE 2",
+    "description": "Rhythmic Activities",
+    "units": 2,
+    "course": "BSED ENG",
+    "yearLevel": 1,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)ELT4",
+    "description": "Teaching and Assessment  of Literature Studies",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)ELT5",
+    "description": "Teaching and Assessment of the Macroskills",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)ELT6",
+    "description": "Teaching and Assessment of Grammar",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)ELT7",
+    "description": "Speech and Theater Arts",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)GE8",
+    "description": "Ethics",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)GE9",
+    "description": "Living in the IT Era",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)GE10",
+    "description": "Gender and Society",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)EDUC102",
+    "description": "The Teaching Profession",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)PE 3",
+    "description": "Individual and Dual Sports",
+    "units": 2,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)ELT8",
+    "description": "Language Education Research",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)LIT101",
+    "description": "Children and Adolescent Literature",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)LIT102",
+    "description": "Mythology and Folklore",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)LIT103",
+    "description": "Survey of Philippine Literature in English",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)GE11",
+    "description": "Reading Visual Arts",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)GE12",
+    "description": "Life and Works of Rizal",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)EDUC109",
+    "description": "The Teacher and the Community , School Culture and Organizational Leadership",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)PE 4",
+    "description": "Team Sports",
+    "units": 2,
+    "course": "BSED ENG",
+    "yearLevel": 2,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)LIT104",
+    "description": "Survey of Afro-Asian Literature",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)LIT105",
+    "description": "Survey of English and American Literature",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)LIT106",
+    "description": "Contemporary, Popular, and Emergent Literature",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)LIT107",
+    "description": "Literary Criticism",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)TTL1",
+    "description": "Technology for Teaching and Learning 1",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)EDUC103",
+    "description": "Facilitating Learner-Centered teaching",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)EDUC105",
+    "description": "Foundation of Special  and Inclusive Education",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)EDUC107",
+    "description": "Assessment in Learning 1",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)CJ",
+    "description": "Campus Journalism",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)ELT9",
+    "description": "Technical Writing",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)TTL2",
+    "description": "Technology for Teaching and Learning 2(Technology in Language Education)",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)ELEC1",
+    "description": "English for Specific Purposes",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)ELEC2",
+    "description": "Creative Writing",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)EDUC104",
+    "description": "Building and Enhancing New Literacies Across the Curriculum",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)EDUC106",
+    "description": "The Teacher and the School Curriculum",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)EDUC108",
+    "description": "Assessment in Learning 2",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 3,
+    "semester": "2nd"
+  },
+  {
+    "code": "(BSED ENG)FS1",
+    "description": "Field Study 1 (In-campus)",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)FS2",
+    "description": "Field Study 2 (In-campus)",
+    "units": 3,
+    "course": "BSED ENG",
+    "yearLevel": 4,
+    "semester": "1st"
+  },
+  {
+    "code": "(BSED ENG)TI",
+    "description": "Teaching Internship  (Off-campus)",
+    "units": 6,
+    "course": "BSED ENG",
+    "yearLevel": 4,
+    "semester": "2nd"
+  }
+]
