@@ -11,7 +11,10 @@ function Write-Package([string]$name, [string]$base, [string[]]$files) {
     $archive = [System.IO.Compression.ZipFile]::Open($destination, [System.IO.Compression.ZipArchiveMode]::Create)
     try {
         foreach ($file in $files) {
-            $relative = [System.IO.Path]::GetRelativePath($base, $file).Replace('\', '/')
+            $basePrefix = [System.IO.Path]::GetFullPath($base).TrimEnd('\') + '\'
+            $absoluteFile = [System.IO.Path]::GetFullPath($file)
+            if (-not $absoluteFile.StartsWith($basePrefix, [System.StringComparison]::OrdinalIgnoreCase)) { throw 'Package input escapes its root' }
+            $relative = $absoluteFile.Substring($basePrefix.Length).Replace('\', '/')
             [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($archive, $file, $relative, [System.IO.Compression.CompressionLevel]::Optimal) | Out-Null
         }
     } finally { $archive.Dispose() }
