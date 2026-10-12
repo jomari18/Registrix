@@ -143,7 +143,7 @@ async (page) => {
   await page.getByRole("button", { name: "Save grades", exact: true }).click();
   await page
     .getByRole("alert")
-    .filter({ hasText: "Class access is no longer available." })
+    .filter({ hasText: "Enrollment is unavailable." })
     .waitFor();
   check(
     (await page.getByLabel("Final", { exact: true }).count()) === 0,

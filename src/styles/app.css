@@ -1040,6 +1040,95 @@ td small {
     transition: background 0.15s;
   }
 }
+.record-picker {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+.choice-group {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.choice-group legend {
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.choice-list {
+  display: grid;
+  gap: 8px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 5px;
+}
+.choice-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  min-height: 68px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+}
+.choice-row:hover {
+  border-color: var(--primary);
+}
+.choice-row.selected {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+.choice-row:focus-within {
+  outline: 3px solid #b795d7;
+  outline-offset: 1px;
+}
+.choice-row input {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--primary);
+}
+.choice-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.choice-copy > span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.choice-selected {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+.choice-empty {
+  padding: 18px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+}
+.choice-group:disabled .choice-row {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+@media (max-width: 420px) {
+  .choice-row {
+    padding: 12px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .choice-selected {
+    margin-left: 28px;
+  }
+}
 @media print {
   .shell-header,
   .bottom-nav,

@@ -30,8 +30,10 @@ async (page) => {
   await page.waitForURL(/\/students\/[a-f0-9-]+\?new=1$/);
   const firstUrl = page.url();
   await page
-    .getByLabel("Select a class", { exact: true })
-    .selectOption({ index: 1 });
+    .getByRole("group", { name: "Matching classes", exact: true })
+    .getByRole("radio")
+    .first()
+    .check();
   await page
     .getByRole("button", { name: "Add enrollment", exact: true })
     .click();
@@ -57,8 +59,9 @@ async (page) => {
   await page.waitForURL(/\/classes\/[a-f0-9-]+$/);
   await page.goto(firstUrl);
   await page
-    .getByLabel("Select a class", { exact: true })
-    .selectOption({ label: "(BSCS)CC102 · BSCS 1-B · 1st · 2026-2027" });
+    .getByRole("group", { name: "Matching classes", exact: true })
+    .getByRole("radio", { name: /Fundamentals of Programming.*BSCS 1-B/ })
+    .check();
   await page
     .getByRole("button", { name: "Add enrollment", exact: true })
     .click();
@@ -167,4 +170,3 @@ async (page) => {
     "PASS records: duplicate names, independent enrollments, archive/restore precedence, stale draft and mobile long names",
   );
 }
-

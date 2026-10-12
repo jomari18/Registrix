@@ -47,8 +47,9 @@ async (page) => {
     .first()
     .click();
   await page
-    .getByLabel("Teacher", { exact: true })
-    .selectOption({ label: "Pending Demo · fixture_pending" });
+    .getByRole("group", { name: "Matching teachers", exact: true })
+    .getByRole("radio", { name: /Pending Demo.*fixture_pending/ })
+    .check();
   await page
     .getByRole("button", { name: "Assign teacher", exact: true })
     .click();
@@ -127,4 +128,3 @@ async (page) => {
       "pending approval, teacher assignment/scope, revocation, last-admin protection, registrar restriction and real dashboard",
   };
 }
-

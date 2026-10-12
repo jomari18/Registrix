@@ -43,4 +43,3 @@ async (page) => {
   await page.waitForURL("http://127.0.0.1:5192/");
   return { passed: "teacher identity and administrative route restrictions" };
 }
-

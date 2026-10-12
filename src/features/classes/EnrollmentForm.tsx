@@ -6,7 +6,7 @@ import { studentsApi } from "../students/api";
 import { classLabel, studentName, type Enrollment } from "../../domain/records";
 import { Button } from "../../components/Button";
 import { Field } from "../../components/Field";
-import { SelectField } from "../../components/SelectField";
+import { ResultChoices } from "../../components/ResultChoices";
 import { MutationNotice } from "../../components/MutationNotice";
 import { QueryState } from "../../components/QueryState";
 import { Pagination } from "../../components/Pagination";
@@ -52,43 +52,55 @@ export function EnrollmentForm({
       <p className="muted small" style={{ margin: "8px 0 20px" }}>
         Each enrollment keeps its own six scores and academic history.
       </p>
-      <div className="form-grid">
+      <div className="record-picker">
         <Field
           label={studentId ? "Search classes" : "Search students to enroll"}
           type="search"
           value={search}
+          disabled={mutation.locked}
+          placeholder={
+            studentId
+              ? "Subject name, code or section"
+              : "Student name or number"
+          }
+          hint="Matching records appear below. Choose one before adding the enrollment."
           onChange={(e) => {
             setSearch(e.target.value);
             setPage(1);
             setSelected("");
           }}
         />
-        <SelectField
-          label={studentId ? "Select a class" : "Select a student"}
-          name={studentId ? "class_id" : "student_id"}
-          disabled={mutation.locked || q.loading}
-          value={selected}
-          onChange={(e) => setSelected(e.target.value)}
-        >
-          <option value="">Choose an active record</option>
-          {studentId
-            ? classes.data?.items.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {classLabel(c)}
-                </option>
-              ))
-            : students.data?.items.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {studentName(s)} · {s.student_no}
-                </option>
-              ))}
-        </SelectField>
+        <QueryState query={q} />
+        {!q.loading && !q.error && q.data && (
+          <ResultChoices
+            label={studentId ? "Matching classes" : "Matching students"}
+            selected={selected}
+            onSelect={setSelected}
+            disabled={mutation.locked}
+            emptyText={
+              studentId ? "No matching classes." : "No matching students."
+            }
+            options={
+              studentId
+                ? (classes.data?.items ?? []).map((c) => ({
+                    id: c.id,
+                    title: c.subject.description,
+                    detail: classLabel(c),
+                  }))
+                : (students.data?.items ?? []).map((s) => ({
+                    id: s.id,
+                    title: studentName(s),
+                    detail: "Student number · " + s.student_no,
+                  }))
+            }
+          />
+        )}
       </div>
-      <QueryState query={q} />
       {q.data && q.data.total > 20 && (
         <Pagination
           page={page}
           total={q.data.total}
+          disabled={mutation.locked || q.loading}
           onChange={(next) => {
             setSelected("");
             setPage(next);

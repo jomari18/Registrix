@@ -5,7 +5,7 @@ import { useMutation } from "../../hooks/useMutation";
 import type { PageResult } from "../../domain/contracts";
 import type { AcademicClass, Staff } from "../../domain/records";
 import { Field } from "../../components/Field";
-import { SelectField } from "../../components/SelectField";
+import { ResultChoices } from "../../components/ResultChoices";
 import { Button } from "../../components/Button";
 import { MutationNotice } from "../../components/MutationNotice";
 import { QueryState } from "../../components/QueryState";
@@ -25,11 +25,14 @@ export function TeacherAssignments({
       user_id: string;
       active: boolean;
       version: number | null;
+      name: string;
     } | null>(null),
     q = useQuery(["teacher-select", search, page], () =>
       rpc<PageResult<Staff>>("list_staff", { state: "active", search, page }),
     ),
-    mutation = useMutation("set_teacher_assignment", record.id);
+    mutation = useMutation("set_teacher_assignment", record.id),
+    teachers = q.data?.items.filter((s) => s.role === "teacher") ?? [],
+    selectedTeacher = teachers.find((s) => s.id === selected);
   useEffect(() => {
     if (mutation.state.phase === "saved") {
       setSelected("");
@@ -56,6 +59,7 @@ export function TeacherAssignments({
                   user_id: a.user_id,
                   active: false,
                   version: a.version,
+                  name: a.profile.display_name,
                 })
               }
             >
@@ -63,46 +67,66 @@ export function TeacherAssignments({
             </Button>
           </div>
         ))}
-      <div className="form-grid">
+      <div className="record-picker">
         <Field
           label="Search staff to assign"
           type="search"
           value={search}
+          disabled={mutation.locked}
+          placeholder="Teacher name, username or email"
+          hint="Choose an approved teacher from the results below."
           onChange={(e) => {
             setSearch(e.target.value);
             setPage(1);
+            setSelected("");
           }}
         />
-        <SelectField
-          label="Teacher"
-          value={selected}
-          onChange={(e) => setSelected(e.target.value)}
-        >
-          <option value="">Choose an approved teacher</option>
-          {q.data?.items
-            .filter((s) => s.role === "teacher")
-            .map((s) => (
-              <option key={s.id} value={s.id}>
-                {s.display_name} · {s.username}
-              </option>
-            ))}
-        </SelectField>
+        <QueryState query={q} />
+        {!q.loading && !q.error && q.data && (
+          <ResultChoices
+            label="Matching teachers"
+            selected={selected}
+            onSelect={setSelected}
+            disabled={mutation.locked}
+            emptyText={
+              q.data.total
+                ? "No approved teachers on this result page. Try another name or page."
+                : "No matching teachers."
+            }
+            options={teachers.map((s) => ({
+              id: s.id,
+              title: s.display_name,
+              detail: s.username + " · " + s.email,
+            }))}
+          />
+        )}
       </div>
-      <QueryState query={q} />
       {q.data && q.data.total > 20 && (
-        <Pagination page={page} total={q.data.total} onChange={setPage} />
+        <Pagination
+          page={page}
+          total={q.data.total}
+          disabled={mutation.locked || q.loading}
+          onChange={(next) => {
+            setSelected("");
+            setPage(next);
+          }}
+        />
       )}
       <MutationNotice mutation={mutation} />
       <div className="actions" style={{ marginTop: 20 }}>
         <Button
-          disabled={!selected || mutation.locked}
+          disabled={!selectedTeacher || q.loading || mutation.locked}
           onClick={() =>
+            selectedTeacher &&
+            !q.loading &&
+            !mutation.locked &&
             setConfirm({
               user_id: selected,
               active: true,
               version:
                 record.assignments?.find((a) => a.user_id === selected)
                   ?.version ?? null,
+              name: selectedTeacher.display_name,
             })
           }
         >
@@ -112,7 +136,7 @@ export function TeacherAssignments({
       <ConfirmationDialog
         open={!!confirm}
         title={confirm?.active ? "Assign teacher?" : "Remove teacher access?"}
-        message="Class access changes on the teacher’s next request. Review the selected teacher before confirming."
+        message={`${confirm?.active ? "Assign" : "Remove access for"} ${confirm?.name ?? "this teacher"}? Class access changes on the teacher’s next request.`}
         confirmLabel="Update assignment"
         onCancel={() => setConfirm(null)}
         onConfirm={() => {

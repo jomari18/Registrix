@@ -4,11 +4,13 @@ export function Pagination({
   total,
   size = 20,
   onChange,
+  disabled = false,
 }: {
   page: number;
   total: number;
   size?: number;
   onChange: (page: number) => void;
+  disabled?: boolean;
 }) {
   return (
     <div className="table-footer">
@@ -21,14 +23,14 @@ export function Pagination({
       <div className="actions">
         <Button
           variant="secondary small"
-          disabled={page <= 1}
+          disabled={disabled || page <= 1}
           onClick={() => onChange(page - 1)}
         >
           Previous
         </Button>
         <Button
           variant="secondary small"
-          disabled={page * size >= total}
+          disabled={disabled || page * size >= total}
           onClick={() => onChange(page + 1)}
         >
           Next

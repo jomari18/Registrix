@@ -116,4 +116,3 @@ async (page) => {
       "40 workspace and 15 auth viewport checks, assets, reduced motion and keyboard order",
   };
 }
-

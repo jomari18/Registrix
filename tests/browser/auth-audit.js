@@ -98,4 +98,3 @@ async (page) => {
     "PASS auth: invalid login/code, eight-digit OTP, resend cooldown, pending gate, approved session, draft retention and logout, recovery",
   );
 }
-

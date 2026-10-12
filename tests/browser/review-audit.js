@@ -118,8 +118,10 @@ async (page) => {
   await login("admin");
   await go("/students/" + studentId);
   await page
-    .getByLabel("Select a class", { exact: true })
-    .selectOption({ index: 1 });
+    .getByRole("group", { name: "Matching classes", exact: true })
+    .getByRole("radio")
+    .first()
+    .check();
   await page
     .getByLabel("Search classes", { exact: true })
     .fill("NO-MATCH-REVIEW");

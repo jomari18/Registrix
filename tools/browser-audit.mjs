@@ -88,19 +88,22 @@ try {
   await ready("http://127.0.0.1:5192/auth");
   await call(["close"], "previous-session-close");
   await call(["open", "http://127.0.0.1:5192/auth"], "open");
-  const scripts = process.env.REGISTRIX_REVIEW_ONLY
-    ? ["review"]
-    : [
-        "auth",
-        "records",
-        "mutation",
-        "teacher-records",
-        "grading",
-        "admin",
-        "responsive",
-        "resilience",
-        "review",
-      ];
+  const scripts = process.env.REGISTRIX_SELECTOR_ONLY
+    ? ["selectors"]
+    : process.env.REGISTRIX_REVIEW_ONLY
+      ? ["review"]
+      : [
+          "auth",
+          "records",
+          "mutation",
+          "teacher-records",
+          "grading",
+          "admin",
+          "responsive",
+          "resilience",
+          "review",
+          "selectors",
+        ];
   for (const name of scripts) {
     const output = await call(
       ["run-code", `--filename=tests/browser/${name}-audit.js`],
