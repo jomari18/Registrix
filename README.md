@@ -20,6 +20,22 @@ Database/auth setup: [docs/supabase-setup.md](docs/supabase-setup.md). Automatic
 - Archive/restore preserves history. Stale edits are rejected, and unknown save outcomes recover an immutable, actor-bound action instead of creating duplicates.
 - Responsive desktop/tablet/mobile web interface, original local artwork, accessible labels, dialogs and keyboard controls.
 
+## System design
+
+These diagrams were drawn from the app's actual database schema, roles and code paths.
+
+**Context diagram.** Registrix as a single process, and the people and outside services it exchanges data with.
+
+![Registrix context diagram](docs/diagrams/context-diagram.png)
+
+**Data flow diagram (Level 1).** The main processes, the data stores they read and write (grouped from the database tables), and the data that moves between them.
+
+![Registrix data flow diagram](docs/diagrams/data-flow-diagram.png)
+
+**Flowchart: teacher grading.** The main workflow step by step, including decisions and error paths.
+
+![Registrix flowchart](docs/diagrams/flowchart.png)
+
 ## Checks
 
 `npm test`, `npm run typecheck`, `npm run build`, `npm run check:assets`, `npm run check:bundle`.
