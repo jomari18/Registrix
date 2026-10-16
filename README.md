@@ -1,24 +1,23 @@
 # Registrix
 
-[Live application](https://registrix.netlify.app/)
+**Student Records & Grading System**
 
-React + TypeScript + Supabase conversion of a recovered desktop student-record project, using the supplied Studio Campus design and original Registrix branding.
+Registrix is a web-based student records and grading system, rebuilt from a C# Windows Forms and Microsoft Access desktop project. Administrators manage staff access and teacher assignments, registrars manage students, subjects, classes, and enrollments, and teachers grade only the classes assigned to them.
 
-## Run locally
+## Live Demo
 
-Use Node.js 24 or later. Run `npm ci`, copy `.env.example` to `.env.local`, and fill in the **dedicated Registrix** Supabase Project URL and publishable key. Run `npm run dev`, then open http://127.0.0.1:5190. Never put a service-role key, database password or SMTP credential in a frontend environment variable.
+**[Open Registrix](https://registrix.netlify.app/)**
 
-Database/auth setup: [docs/supabase-setup.md](docs/supabase-setup.md). Automatic calculation and thresholds: [docs/grade-policy.md](docs/grade-policy.md). Source catalog findings: [docs/catalog-review.md](docs/catalog-review.md).
+## Highlights
 
-## Workflows
-
-- Email/password sign-in, registration, verification/resend, password recovery/reset and sign-out.
-- Verified registrations stay pending until an administrator approves staff access.
-- Administrators approve/reject/revoke accounts and assign teachers to classes. Registrars manage academic records. Teachers read and grade only assigned classes.
-- One student identity may have multiple class enrollments. Each enrollment owns its six grading scores and server-calculated result.
-- General Average computes automatically. Partial scores remain Incomplete; empty values stay null and zero remains valid. No unit weighting is inferred.
-- Archive/restore preserves history. Stale edits are rejected, and unknown save outcomes recover an immutable, actor-bound action instead of creating duplicates.
-- Responsive desktop/tablet/mobile web interface, original local artwork, accessible labels, dialogs and keyboard controls.
+- Email/password sign-in, registration, verification and resend, and password recovery
+- New staff accounts stay pending until an administrator approves them
+- Role-based access for administrators, registrars, and teachers
+- One student can have multiple class enrollments, each with its own grades
+- General Average calculated on the server; partial scores stay Incomplete and zero remains valid
+- Archive and restore that keep history
+- Stale edits are rejected, and interrupted saves recover without creating duplicates
+- Responsive desktop, tablet, and mobile layout with accessible labels, dialogs, and keyboard controls
 
 ## System design
 
@@ -36,16 +35,44 @@ These diagrams were drawn from the app's actual database schema, roles and code 
 
 ![Registrix flowchart](docs/diagrams/flowchart.png)
 
-## Checks
+## Tech Stack
 
-`npm test`, `npm run typecheck`, `npm run build`, `npm run check:assets`, `npm run check:bundle`.
+- React, TypeScript, Vite
+- Supabase Auth, PostgreSQL, Row Level Security, and RPC functions
+- Vitest and the Playwright CLI
+- Netlify
 
-Database regressions use a disposable PostgreSQL 17+ cluster only on **127.0.0.1:55444**, database/user `registrix_test`. On this Windows workstation run `tools/start-test-db.ps1`, then `npm run test:db`. They refuse hosted targets and reset only the isolated synthetic database. The test suite creates mock Auth tables; it does not authenticate hosted users.
+## Security Design
 
-Install the Playwright CLI separately and set `PLAYWRIGHT_CLI` if needed. `npm run test:browser` starts its synthetic Auth adapter on 55445 and Vite audit preview on 5192, exercises real local SQL RPCs, checks CLI error markers, saves evidence to `outputs/audit`, and stops its own servers. Ports must be free. Your normal 5190 workspace stays configured for the dedicated hosted project.
+Every write goes through server-side RPC functions that check the caller's role: only administrators can approve staff or assign teachers, only administrators and registrars can manage records, and teachers can open and grade only their assigned classes. Saves carry a version check to reject stale edits, and each action is recorded in a private audit table.
 
-## Build and hosting
+> Only the Supabase project URL and publishable key are used in the browser. No legacy database, real student records, old passwords, or privileged credentials are included in this repository.
 
-`npm run build` creates `dist`. Netlify configuration includes SPA redirects and security headers; configure the two publishable environment values in your own deployment. Update Supabase Site URL/redirect allowlist for the final HTTPS domain. This conversion does not automatically publish, push or deploy Registrix.
+## Database
 
-Assets/license: [docs/asset-manifest.md](docs/asset-manifest.md). Verification and limitations: [AUDIT.md](AUDIT.md). No legacy MDB, real student records, old passwords, school artwork, SMTP settings or privileged credentials are delivered. Optional demo SQL is explicitly fictional and separate from normal setup. Registrix is an independent academic portfolio project, not an official institution system.
+SQL migrations are in [`supabase/migrations/`](supabase/migrations/). Setup guides: [Supabase setup](docs/supabase-setup.md), [grade policy](docs/grade-policy.md), [database contracts](docs/database-contracts.md), and [catalog review](docs/catalog-review.md).
+
+## Local Use
+
+Use Node.js 24 or later.
+
+```sh
+npm ci
+cp .env.example .env.local   # set the Supabase URL and publishable key
+npm run dev
+```
+
+Open http://127.0.0.1:5190. `npm run build` creates `dist`.
+
+## Testing
+
+`npm test` runs 53 unit tests. `npm run test:db` runs database regression tests against a disposable local PostgreSQL cluster, and `npm run test:browser` runs Playwright CLI audits against real local SQL functions. `npm run typecheck`, `npm run check:assets`, and `npm run check:bundle` complete the checks. See [verification](docs/verification.md) and the [audit](AUDIT.md).
+
+## Author
+
+**Jomari M. Candido**
+Sole Software Developer
+
+## Project Status
+
+Portfolio release — live on Netlify and deployed from this repository. Registrix is an independent academic portfolio project, not an official institution system.
