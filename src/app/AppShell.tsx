@@ -72,7 +72,6 @@ export function AppShell({
       <footer className="footer">
         <span>Registrix · Student records, thoughtfully organized.</span>
         <span>
-          Independent academic portfolio project ·{" "}
           <Link to="/about">About Registrix</Link>
         </span>
       </footer>

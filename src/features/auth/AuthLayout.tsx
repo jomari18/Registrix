@@ -28,9 +28,6 @@ export function AuthLayout({
           src="/assets/illustrations/records-workspace.svg"
           alt="Illustration of organized student records and a graduation cap"
         />
-        <small className="muted">
-          Registrix · Independent academic portfolio project
-        </small>
       </aside>
       <section className="auth-panel">
         <div className="auth-form">
